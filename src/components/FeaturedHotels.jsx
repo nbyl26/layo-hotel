@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FeaturedHotels = () => {
   const hotels = [
@@ -19,7 +20,9 @@ const FeaturedHotels = () => {
                 <h5 className="card-title">{hotel.name}</h5>
                 <p className="card-text">{hotel.location}</p>
                 <p className="text-primary fw-bold">{hotel.price}</p>
-                <button className="btn btn-primary">View Details</button>
+                {/* <button className="btn btn-primary">View Details</button> */}
+                <Link to={`/hotel-detail`} className="btn btn-primary">View Details</Link>
+                
               </div>
             </div>
           </div>
