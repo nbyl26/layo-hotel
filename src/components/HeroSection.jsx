@@ -1,11 +1,13 @@
 import React from "react";
 
+import BgImage from "../assets/images/bg-hotel.png";
+
 const HeroSection = () => {
   return (
     <div
       className="hero-section"
       style={{
-        backgroundImage: `url('https://via.placeholder.com/1920x800')`,
+        backgroundImage: `url(${BgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
