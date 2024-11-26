@@ -1,15 +1,13 @@
-import React from 'react';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import FeaturedHotels from '../components/FeaturedHotels';
-import Footer from '../components/Footer';
+import React from "react";
+import HeroSection from "../components/HeroSection";
+import Features from "../components/Features";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <Hero />
-      <FeaturedHotels />
+      <HeroSection />
+      <Features />
       <Footer />
     </>
   );
