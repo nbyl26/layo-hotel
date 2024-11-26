@@ -1,11 +1,17 @@
 import React from 'react';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import FeaturedHotels from '../components/FeaturedHotels';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
-    <div className="container text-center mt-5">
-      <h1>Welcome to Layo-Hotel</h1>
-      <p>Your comfort, our priority.</p>
-    </div>
+    <>
+      <Header />
+      <Hero />
+      <FeaturedHotels />
+      <Footer />
+    </>
   );
 };
 
