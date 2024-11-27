@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="container my-5">
+    <div className="container-about my-5">
       <h2 className="text-center mb-4" style={{ color: "#007bff", fontWeight: "700" }}>
         About Us
       </h2>

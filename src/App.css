@@ -39,3 +39,29 @@ footer {
   background-color: #28a745;
   transition: background-color 0.3s ease;
 }
+
+.container-about .img-fluid:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.container-about h2, 
+.container-about h3 {
+  transition: color 0.3s ease;
+}
+
+.container-about h2:hover,
+.container-about h3:hover {
+  color: #28a745;
+}
+
+.container-about {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container-about p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+}
