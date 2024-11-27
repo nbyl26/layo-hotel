@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation(); // Mengetahui halaman saat ini
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
@@ -20,6 +22,15 @@ const Navbar = () => {
             fontWeight: "700",
             color: "#007bff",
             fontSize: "1.5rem",
+            transition: "all 0.3s ease-in-out",
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.color = "#0056b3"; // Biru lebih gelap
+            e.target.style.transform = "translateY(-3px)"; // Sedikit naik
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.color = "#007bff";
+            e.target.style.transform = "translateY(0)";
           }}
         >
           Layo-Hotel
@@ -41,82 +52,65 @@ const Navbar = () => {
         {/* Navbar Items */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {/* Nav Item */}
+            {["Home", "Rooms", "About"].map((item, index) => {
+              const page = item.toLowerCase();
+              const isActive = location.pathname === `/${page}` || (page === "home" && location.pathname === "/");
+
+              return (
+                <li key={index} className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to={`/${page === "home" ? "" : page}`}
+                    style={{
+                      color: isActive ? "#007bff" : "#212529",
+                      fontWeight: "500",
+                      padding: "10px 15px",
+                      position: "relative",
+                      textDecoration: "none",
+                      transition: "all 0.3s ease-in-out",
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.target.style.color = "#007bff")
+                    }
+                    onMouseLeave={(e) => {
+                      if (!isActive) e.target.style.color = "#212529";
+                    }}
+                  >
+                    {item}
+                    {/* Underline Animation */}
+                    <span
+                      style={{
+                        content: "''",
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        width: isActive ? "100%" : "0%",
+                        height: "2px",
+                        backgroundColor: "#007bff",
+                        transition: "width 0.3s ease-in-out",
+                      }}
+                    ></span>
+                  </Link>
+                </li>
+              );
+            })}
+            {/* Contact Us */}
             <li className="nav-item">
               <Link
-                className="nav-link"
-                to="/"
-                style={{
-                  color: "#212529",
-                  fontWeight: "500",
-                  padding: "10px 15px",
-                  transition: "0.3s ease-in-out",
-                }}
-                onMouseEnter={(e) =>
-                  (e.target.style.color = "#007bff")
-                }
-                onMouseLeave={(e) =>
-                  (e.target.style.color = "#212529")
-                }
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/rooms"
-                style={{
-                  color: "#212529",
-                  fontWeight: "500",
-                  padding: "10px 15px",
-                  transition: "0.3s ease-in-out",
-                }}
-                onMouseEnter={(e) =>
-                  (e.target.style.color = "#007bff")
-                }
-                onMouseLeave={(e) =>
-                  (e.target.style.color = "#212529")
-                }
-              >
-                Rooms
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/about"
-                style={{
-                  color: "#212529",
-                  fontWeight: "500",
-                  padding: "10px 15px",
-                  transition: "0.3s ease-in-out",
-                }}
-                onMouseEnter={(e) =>
-                  (e.target.style.color = "#007bff")
-                }
-                onMouseLeave={(e) =>
-                  (e.target.style.color = "#212529")
-                }
-              >
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link btn btn-primary text-white px-4"
+                className="nav-link btn text-white px-4"
                 to="/contact"
                 style={{
+                  background: "linear-gradient(90deg, #007bff, #0056b3)",
                   borderRadius: "30px",
                   fontWeight: "600",
                   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                  transition: "transform 0.3s ease",
+                  transition: "all 0.3s ease-in-out",
                 }}
                 onMouseEnter={(e) =>
-                  (e.target.style.transform = "scale(1.1)")
+                  (e.target.style.background = "linear-gradient(90deg, #0056b3, #003f7f)")
                 }
                 onMouseLeave={(e) =>
-                  (e.target.style.transform = "scale(1)")
+                  (e.target.style.background = "linear-gradient(90deg, #007bff, #0056b3)")
                 }
               >
                 Contact Us
