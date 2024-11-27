@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../styles/features.css';
 
 const Features = () => {
   const features = [
@@ -30,7 +31,7 @@ const Features = () => {
                   className={`bi ${feature.icon}`}
                   style={{
                     fontSize: "3rem",
-                    color: "#28a745",
+                    color: "#007bff",
                     transition: "transform 0.3s ease",
                   }}
                 ></i>
