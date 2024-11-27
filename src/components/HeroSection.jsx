@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import BgImage from "../assets/images/bg-hotel.png";
 
 const HeroSection = () => {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowContent(true);
+    }, 500); // Delay untuk animasi
+  }, []);
+
   return (
     <div
       className="hero-section"
@@ -28,22 +36,37 @@ const HeroSection = () => {
         }}
       ></div>
       <div
-        className="content text-center"
+        className={`content text-center ${showContent ? "fade-in" : ""}`}
         style={{
           position: "relative",
           zIndex: 1,
           top: "50%",
           transform: "translateY(-50%)",
+          transition: "opacity 1s ease-in-out",
         }}
       >
-        <h1 style={{ fontSize: "4rem", fontWeight: "700", marginBottom: "20px" }}>
+        <h1
+          style={{
+            fontSize: "4rem",
+            fontWeight: "700",
+            marginBottom: "20px",
+            opacity: showContent ? 1 : 0,
+          }}
+        >
           Welcome to Layo-Hotel
         </h1>
-        <p style={{ fontSize: "1.5rem", marginBottom: "30px" }}>
+        <p
+          style={{
+            fontSize: "1.5rem",
+            marginBottom: "30px",
+            opacity: showContent ? 1 : 0,
+          }}
+        >
           Experience luxury and comfort in every stay.
         </p>
-        <Link to='/rooms'
-          className="btn btn-primary"
+        <Link
+          to="/rooms"
+          className={`btn btn-primary ${showContent ? "btn-animate" : ""}`}
           style={{
             fontSize: "1.25rem",
             padding: "10px 30px",
@@ -52,6 +75,7 @@ const HeroSection = () => {
             border: "none",
             color: "#fff",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
+            transition: "transform 0.3s ease",
           }}
         >
           Book Now

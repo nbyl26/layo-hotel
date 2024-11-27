@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import '../styles/navbar.css';
+// import '../styles/navbar.css';
 
 const Navbar = () => {
-  const location = useLocation(); 
+  const location = useLocation(); // Mengetahui halaman saat ini
 
   return (
     <nav
