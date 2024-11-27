@@ -78,10 +78,8 @@ const Rooms = () => {
                 </h5>
                 <p style={{ color: "#555" }}>{room.price}</p>
                 <Link
-                  to={{
-                    pathname: "/hotel-detail",
-                    state: { room },
-                  }}
+                  to="/hotel-detail"
+                  state={{ room }}
                   className="btn btn-primary"
                   style={{
                     borderRadius: "30px",

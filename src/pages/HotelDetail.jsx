@@ -1,9 +1,18 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const HotelDetail = () => {
   const location = useLocation();
-  const room = location.state.room; 
+  const navigate = useNavigate();
+  const room = location.state?.room;
+
+  console.log(location.state); 
+
+  if (!room) {
+    navigate("/"); 
+    return <div>Room data is not available. Please go back to the homepage.</div>;
+  }
+  
 
   return (
     <div className="container my-5">
