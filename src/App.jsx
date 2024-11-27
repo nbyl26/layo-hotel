@@ -9,6 +9,7 @@ import HotelDetail from "./pages/HotelDetail";
 import Rooms from "./pages/Rooms";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Confirmation from "./pages/ConfirmationPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
       </div>
       <Footer />

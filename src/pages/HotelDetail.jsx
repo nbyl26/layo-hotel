@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt, faUsers, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -8,26 +8,67 @@ const HotelDetail = () => {
   const navigate = useNavigate();
   const room = location.state?.room;
 
+  const [loading, setLoading] = useState(false);
+
   if (!room) {
     navigate("/");
     return <div>Room data is not available. Please go back to the homepage.</div>;
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+  
+    const checkInDate = document.getElementById("checkInDate").value;
+    const checkOutDate = document.getElementById("checkOutDate").value;
+    const guests = document.getElementById("guests").value;
+  
+    if (!checkInDate || !checkOutDate || !guests) {
+      alert("Please fill in all fields.");
+      setLoading(false);
+      return;
+    }
+  
+    try {
+      // Simpan data kamar bersama data form
+      const reservationData = {
+        roomTitle: room.title, // Ambil dari state atau prop
+        roomPrice: room.price,
+        roomImage: room.image,
+        checkInDate,
+        checkOutDate,
+        guests,
+      };
+  
+      // Kirim data ke backend atau JSON lokal
+      const response = await fetch("http://localhost:3001/reservations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reservationData), // Gabungkan semua data di sini
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        alert("Reservation successful!");
+        navigate("/confirmation", { state: { reservation: reservationData } });
+      } else {
+        alert(result.message || "Failed to make a reservation.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div
-      className="container my-5"
-      style={{
-        fontFamily: "'Poppins', sans-serif",
-        color: "#444",
-      }}
-    >
+    <div className="container my-5" style={{ fontFamily: "'Poppins', sans-serif", color: "#444" }}>
       {/* Header Section */}
-      <div
-        className="text-center position-relative"
-        style={{
-          marginBottom: "40px",
-        }}
-      >
+      <div className="text-center position-relative" style={{ marginBottom: "40px" }}>
         <img
           src={room.image}
           alt={room.title}
@@ -47,20 +88,10 @@ const HotelDetail = () => {
             borderRadius: "20px",
           }}
         >
-          <h1
-            className="fw-bold"
-            style={{
-              fontSize: "2.5rem",
-            }}
-          >
+          <h1 className="fw-bold" style={{ fontSize: "2.5rem" }}>
             {room.title}
           </h1>
-          <h4
-            className="mt-2"
-            style={{
-              color: "#f8c94b",
-            }}
-          >
+          <h4 className="mt-2" style={{ color: "#f8c94b" }}>
             {room.price}
           </h4>
         </div>
@@ -94,24 +125,19 @@ const HotelDetail = () => {
                   marginBottom: "10px",
                 }}
               >
-                <FontAwesomeIcon
-                  icon={faCheckCircle}
-                  className="text-success me-3"
-                />
+                <FontAwesomeIcon icon={faCheckCircle} className="text-success me-3" />
                 {feature}
               </li>
             ))}
           </ul>
 
           {/* Reservation Form */}
-          <form className="p-4 rounded shadow" style={{ backgroundColor: "#f7f7f7" }}>
-            <h5
-              className="mb-3 text-center"
-              style={{
-                fontWeight: "700",
-                color: "#007bff",
-              }}
-            >
+          <form
+            className="p-4 rounded shadow"
+            style={{ backgroundColor: "#f7f7f7" }}
+            onSubmit={handleSubmit}
+          >
+            <h5 className="mb-3 text-center" style={{ fontWeight: "700", color: "#007bff" }}>
               Reserve Your Stay
             </h5>
             <div className="mb-3">
@@ -158,12 +184,13 @@ const HotelDetail = () => {
                 padding: "12px",
                 fontWeight: "600",
                 borderRadius: "30px",
-                backgroundColor: "#007bff",
+                backgroundColor: loading ? "#6c757d" : "#007bff",
                 border: "none",
                 transition: "background-color 0.3s",
               }}
+              disabled={loading}
             >
-              Reserve Now
+              {loading ? "Processing..." : "Reserve Now"}
             </button>
           </form>
         </div>
