@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import '../styles/navbar.css';
 
 const Navbar = () => {
-  const location = useLocation(); // Mengetahui halaman saat ini
+  const location = useLocation(); 
 
   return (
     <nav
@@ -50,11 +51,17 @@ const Navbar = () => {
         </button>
 
         {/* Navbar Items */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+        <div
+          className="collapse navbar-collapse justify-content-between"
+          id="navbarNav"
+        >
+          {/* Menu Tengah */}
+          <ul className="navbar-nav mx-auto">
             {["Home", "Rooms", "About"].map((item, index) => {
               const page = item.toLowerCase();
-              const isActive = location.pathname === `/${page}` || (page === "home" && location.pathname === "/");
+              const isActive =
+                location.pathname === `/${page}` ||
+                (page === "home" && location.pathname === "/");
 
               return (
                 <li key={index} className="nav-item">
@@ -94,29 +101,29 @@ const Navbar = () => {
                 </li>
               );
             })}
-            {/* Contact Us */}
-            <li className="nav-item">
-              <Link
-                className="nav-link btn text-white px-4"
-                to="/contact"
-                style={{
-                  background: "linear-gradient(90deg, #007bff, #0056b3)",
-                  borderRadius: "30px",
-                  fontWeight: "600",
-                  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                  transition: "all 0.3s ease-in-out",
-                }}
-                onMouseEnter={(e) =>
-                  (e.target.style.background = "linear-gradient(90deg, #0056b3, #003f7f)")
-                }
-                onMouseLeave={(e) =>
-                  (e.target.style.background = "linear-gradient(90deg, #007bff, #0056b3)")
-                }
-              >
-                Contact Us
-              </Link>
-            </li>
           </ul>
+
+          {/* Contact Us */}
+          <Link
+            className="btn text-white px-4"
+            to="/contact"
+            style={{
+              background: "linear-gradient(90deg, #007bff, #0056b3)",
+              borderRadius: "30px",
+              fontWeight: "600",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+              transition: "all 0.3s ease-in-out",
+              width: "fit-content",
+            }}
+            onMouseEnter={(e) =>
+              (e.target.style.background = "linear-gradient(90deg, #0056b3, #003f7f)")
+            }
+            onMouseLeave={(e) =>
+              (e.target.style.background = "linear-gradient(90deg, #007bff, #0056b3)")
+            }
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
     </nav>

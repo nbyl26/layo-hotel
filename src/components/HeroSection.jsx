@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import BgImage from "../assets/images/bg-hotel.png";
 
@@ -41,7 +42,7 @@ const HeroSection = () => {
         <p style={{ fontSize: "1.5rem", marginBottom: "30px" }}>
           Experience luxury and comfort in every stay.
         </p>
-        <button
+        <Link to='/rooms'
           className="btn btn-primary"
           style={{
             fontSize: "1.25rem",
@@ -54,7 +55,7 @@ const HeroSection = () => {
           }}
         >
           Book Now
-        </button>
+        </Link>
       </div>
     </div>
   );
