@@ -1,4 +1,5 @@
 import React from "react";
+import LobbyHotel from "../assets/images/Lobby-Hotel.jpg";
 
 const About = () => {
   return (
@@ -14,7 +15,7 @@ const About = () => {
       </p>
       <div className="text-center mt-5">
         <img
-          src="https://via.placeholder.com/800x400"
+          src={LobbyHotel}
           alt="About Layo-Hotel"
           className="img-fluid rounded shadow-lg"
           style={{
