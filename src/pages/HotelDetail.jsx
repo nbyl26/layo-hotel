@@ -1,67 +1,168 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarAlt, faUsers, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 const HotelDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const room = location.state?.room;
 
-  console.log(location.state); 
-
   if (!room) {
-    navigate("/"); 
+    navigate("/");
     return <div>Room data is not available. Please go back to the homepage.</div>;
   }
-  
 
   return (
-    <div className="container my-5">
-      <div className="row">
-        <div className="col-md-6">
-          <img
-            src={room.image}
-            alt={room.title}
-            className="img-fluid rounded shadow-lg"
+    <div
+      className="container my-5"
+      style={{
+        fontFamily: "'Poppins', sans-serif",
+        color: "#444",
+      }}
+    >
+      {/* Header Section */}
+      <div
+        className="text-center position-relative"
+        style={{
+          marginBottom: "40px",
+        }}
+      >
+        <img
+          src={room.image}
+          alt={room.title}
+          className="img-fluid rounded shadow-lg"
+          style={{
+            width: "100%",
+            height: "400px",
+            objectFit: "cover",
+            borderRadius: "20px",
+          }}
+        />
+        <div
+          className="position-absolute top-50 start-50 translate-middle text-white"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            padding: "20px 40px",
+            borderRadius: "20px",
+          }}
+        >
+          <h1
+            className="fw-bold"
             style={{
-              width: "100%",
-              height: "auto",
-              objectFit: "cover",
-              borderRadius: "15px",
+              fontSize: "2.5rem",
             }}
-          />
-        </div>
-        <div className="col-md-6">
-          <h2 className="text-primary mb-4" style={{ fontWeight: "700" }}>
+          >
             {room.title}
-          </h2>
-          <p style={{ color: "#555", fontSize: "1.1rem" }}>{room.description}</p>
-          <p className="text-success" style={{ fontSize: "1.25rem", fontWeight: "600" }}>
+          </h1>
+          <h4
+            className="mt-2"
+            style={{
+              color: "#f8c94b",
+            }}
+          >
             {room.price}
+          </h4>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="row justify-content-center">
+        <div className="col-lg-8">
+          <p
+            className="mb-4 text-center"
+            style={{
+              fontSize: "1.2rem",
+              lineHeight: "1.8",
+              color: "#555",
+            }}
+          >
+            {room.description}
           </p>
-          <div className="mt-4">
-            <h5>Room Features:</h5>
-            <ul className="list-group">
-              {room.features.map((feature, index) => (
-                <li key={index} className="list-group-item" style={{ backgroundColor: "#f8f9fa" }}>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <form className="mt-4">
+
+          <h5 className="mb-3" style={{ fontWeight: "600" }}>
+            Room Features:
+          </h5>
+          <ul className="list-group mb-5">
+            {room.features.map((feature, index) => (
+              <li
+                key={index}
+                className="list-group-item d-flex align-items-center"
+                style={{
+                  backgroundColor: "#f8f9fa",
+                  borderRadius: "10px",
+                  marginBottom: "10px",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="text-success me-3"
+                />
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          {/* Reservation Form */}
+          <form className="p-4 rounded shadow" style={{ backgroundColor: "#f7f7f7" }}>
+            <h5
+              className="mb-3 text-center"
+              style={{
+                fontWeight: "700",
+                color: "#007bff",
+              }}
+            >
+              Reserve Your Stay
+            </h5>
             <div className="mb-3">
-              <label htmlFor="checkInDate" className="form-label">Check-in Date</label>
-              <input type="date" className="form-control" id="checkInDate" />
+              <label htmlFor="checkInDate" className="form-label">
+                <FontAwesomeIcon icon={faCalendarAlt} className="me-2" />
+                Check-in Date
+              </label>
+              <input
+                type="date"
+                className="form-control"
+                id="checkInDate"
+                style={{ borderRadius: "10px" }}
+              />
             </div>
             <div className="mb-3">
-              <label htmlFor="checkOutDate" className="form-label">Check-out Date</label>
-              <input type="date" className="form-control" id="checkOutDate" />
+              <label htmlFor="checkOutDate" className="form-label">
+                <FontAwesomeIcon icon={faCalendarAlt} className="me-2" />
+                Check-out Date
+              </label>
+              <input
+                type="date"
+                className="form-control"
+                id="checkOutDate"
+                style={{ borderRadius: "10px" }}
+              />
             </div>
             <div className="mb-3">
-              <label htmlFor="guests" className="form-label">Guests</label>
-              <input type="number" className="form-control" id="guests" placeholder="Number of guests" />
+              <label htmlFor="guests" className="form-label">
+                <FontAwesomeIcon icon={faUsers} className="me-2" />
+                Guests
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="guests"
+                placeholder="Number of guests"
+                style={{ borderRadius: "10px" }}
+              />
             </div>
-            <button type="submit" className="btn btn-primary" style={{ width: "100%", padding: "12px", fontWeight: "600", borderRadius: "30px" }}>
+            <button
+              type="submit"
+              className="btn btn-primary w-100"
+              style={{
+                padding: "12px",
+                fontWeight: "600",
+                borderRadius: "30px",
+                backgroundColor: "#007bff",
+                border: "none",
+                transition: "background-color 0.3s",
+              }}
+            >
               Reserve Now
             </button>
           </form>
