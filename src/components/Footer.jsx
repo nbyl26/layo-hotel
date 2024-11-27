@@ -6,13 +6,13 @@ const Footer = () => {
       <div>
         <p>© 2024 Layo-Hotel. All rights reserved.</p>
         <div className="social-icons">
-          <a href="#" className="me-3 text-light">
+          <a href="#" className="me-3 text-light" style={{ fontSize: "1.5rem" }}>
             <i className="bi bi-github"></i>
           </a>
-          <a href="#" className="me-3 text-light">
+          <a href="#" className="me-3 text-light" style={{ fontSize: "1.5rem" }}>
             <i className="bi bi-instagram"></i>
           </a>
-          <a href="#" className="me-3 text-light">
+          <a href="#" className="me-3 text-light" style={{ fontSize: "1.5rem" }}>
             <i className="bi bi-linkedin"></i>
           </a>
         </div>

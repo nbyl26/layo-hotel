@@ -1,0 +1,9 @@
+.hero-section .content.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .hero-section .btn-animate:hover {
+    transform: scale(1.1);
+  }
+  
