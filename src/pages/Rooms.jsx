@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import DeluxeRoom from "../assets/images/Deluxe-Room.jpg";
 import SuiteRoom from "../assets/images/Suite-Room.jpg";
 import FamilyRoom from "../assets/images/Family-Room.jpg";
@@ -9,16 +11,22 @@ const Rooms = () => {
       title: "Deluxe Room",
       image: DeluxeRoom,
       price: "$150/night",
+      description: "A luxurious room with a king-sized bed and modern amenities.",
+      features: ["King-size bed", "Ocean view", "Free WiFi", "Breakfast included"],
     },
     {
       title: "Suite Room",
       image: SuiteRoom,
       price: "$250/night",
+      description: "A spacious suite with separate living area and a balcony.",
+      features: ["Separate living area", "Balcony", "Free WiFi", "Mini bar"],
     },
     {
       title: "Family Room",
       image: FamilyRoom,
       price: "$200/night",
+      description: "Perfect for families with two double beds and extra space.",
+      features: ["Two double beds", "Extra space", "Free WiFi", "Family-friendly"],
     },
   ];
 
@@ -69,7 +77,11 @@ const Rooms = () => {
                   {room.title}
                 </h5>
                 <p style={{ color: "#555" }}>{room.price}</p>
-                <button
+                <Link
+                  to={{
+                    pathname: "/hotel-detail",
+                    state: { room },
+                  }}
                   className="btn btn-primary"
                   style={{
                     borderRadius: "30px",
@@ -79,7 +91,7 @@ const Rooms = () => {
                   }}
                 >
                   Book Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>

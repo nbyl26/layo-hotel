@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 import HotelBanner from '../components/HotelBanner';
 import HotelDetails from '../components/HotelDetails';
 import CustomerReviews from '../components/CustomerReviews';
@@ -22,12 +21,10 @@ const HotelDetail = () => {
 
   return (
     <>
-      <Header />
       <HotelBanner hotel={hotel} />
       <HotelDetails hotel={hotel} />
       <CustomerReviews reviews={reviews} />
       <BookingForm />
-      <Footer />
     </>
   );
 };
