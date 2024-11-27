@@ -1,20 +1,23 @@
 import React from "react";
+import DeluxeRoom from "../assets/images/Deluxe-Room.jpg";
+import SuiteRoom from "../assets/images/Suite-Room.jpg";
+import FamilyRoom from "../assets/images/Family-Room.jpg";
 
 const Rooms = () => {
   const rooms = [
     {
       title: "Deluxe Room",
-      image: "https://via.placeholder.com/600x400",
+      image: DeluxeRoom,
       price: "$150/night",
     },
     {
       title: "Suite Room",
-      image: "https://via.placeholder.com/600x400",
+      image: SuiteRoom,
       price: "$250/night",
     },
     {
       title: "Family Room",
-      image: "https://via.placeholder.com/600x400",
+      image: FamilyRoom,
       price: "$200/night",
     },
   ];

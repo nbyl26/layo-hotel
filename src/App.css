@@ -1,7 +1,7 @@
-/* Pastikan body dan html mengambil tinggi penuh */
-html, body {
+html,
+body {
   height: 100%;
-  margin: 0; /* Menghilangkan margin default */
+  margin: 0;
 }
 
 #root {
@@ -10,9 +10,8 @@ html, body {
   min-height: 100%;
 }
 
-/* Konten utama di halaman */
 .main-content {
-  flex: 1; /* Membuat konten utama fleksibel agar footer didorong ke bawah */
+  flex: 1;
 }
 
 /* Footer */
@@ -20,6 +19,23 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  background-color: #f8f9fa; /* Warna latar belakang footer */
-  color: #212529; /* Warna teks footer */
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.card-img-container:hover img {
+  transform: scale(1.1);
+}
+
+.card-img-container:hover .card-img-overlay {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.btn-primary:hover {
+  background-color: #28a745;
+  transition: background-color 0.3s ease;
 }
