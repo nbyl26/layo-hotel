@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const location = useLocation(); // Mengetahui halaman saat ini
+  const location = useLocation();
 
   return (
     <nav
@@ -55,8 +55,8 @@ const Navbar = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav mx-auto">
-            {["Home", "Rooms", "About"].map((item, index) => {
-              const page = item.toLowerCase();
+            {["Home", "Rooms", "About", "Booking History"].map((item, index) => {
+              const page = item.toLowerCase().replace(" ", "-");
               const isActive =
                 location.pathname === `/${page}` ||
                 (page === "home" && location.pathname === "/");
