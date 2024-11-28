@@ -13,9 +13,18 @@ const HeroSection = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    // Mengecek apakah animasi sudah pernah dipicu sebelumnya
+    const animationTriggered = localStorage.getItem("animationTriggered");
+
+    if (!animationTriggered) {
+      setTimeout(() => {
+        setShowContent(true);
+        localStorage.setItem("animationTriggered", "true");
+      }, 500);
+    } else {
+      // Jika animasi sudah dipicu, langsung tampilkan konten tanpa animasi
       setShowContent(true);
-    }, 500);
+    }
 
     // Ganti gambar secara otomatis
     const interval = setInterval(() => {
@@ -36,7 +45,6 @@ const HeroSection = () => {
         height: "100vh",
         position: "relative",
         color: "#ffffff",
-        // zIndex: -1,
         transition: "background-image 1s ease-in-out",
       }}
     >
@@ -92,13 +100,10 @@ const HeroSection = () => {
             color: "#fff",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
             transition: "all 0.3s ease, transform 0.3s ease",
-            position: "relative",
-            zIndex: "10000",
           }}
         >
           Book Now
         </Link>
-
       </div>
     </div>
   );
