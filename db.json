@@ -3,7 +3,7 @@
     {
       "id": "1346",
       "roomTitle": "Suite Room",
-      "roomPrice": "$250/night",
+      "roomPrice": "Rp 2.500.000/night",
       "roomImage": "/src/assets/images/Suite-Room.jpg?t=1732730793036",
       "checkInDate": "2024-11-29",
       "checkOutDate": "2024-11-30",
@@ -12,11 +12,11 @@
     {
       "id": "830a",
       "roomTitle": "Family Room",
-      "roomPrice": "$200/night",
+      "roomPrice": "Rp 2.000.000/night",
       "roomImage": "/src/assets/images/Family-Room.jpg?t=1732730767089",
       "checkInDate": "2024-12-03",
       "checkOutDate": "2024-12-05",
-      "guests": "-2"
+      "guests": "4"
     }
   ]
 }

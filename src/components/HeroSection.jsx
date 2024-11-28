@@ -23,6 +23,7 @@ const HeroSection = () => {
         height: "100vh",
         position: "relative",
         color: "#ffffff",
+        zIndex: -1, // Pastikan hero berada di bawah navbar
       }}
     >
       <div

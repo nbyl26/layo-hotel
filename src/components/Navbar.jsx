@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50); // Navbar menjadi solid jika scroll lebih dari 50px
+    };
+
+    handleScroll(); // Jalankan sekali untuk menentukan transparansi awal
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+      className={`navbar navbar-expand-lg navbar-light shadow-sm sticky-top ${
+        isScrolled ? "bg-white" : "bg-transparent"
+      }`}
       style={{
         padding: "10px 20px",
         fontFamily: "'Poppins', sans-serif",
         zIndex: "9999",
+        transition: "background-color 0.3s ease-in-out", // Animasi transisi
       }}
     >
       <div className="container">
@@ -20,16 +37,16 @@ const Navbar = () => {
           to="/"
           style={{
             fontWeight: "700",
-            color: "#007bff",
+            color: isScrolled ? "#007bff" : "#ffffff", // Warna logo berubah berdasarkan posisi scroll
             fontSize: "1.5rem",
             transition: "all 0.3s ease-in-out",
           }}
           onMouseEnter={(e) => {
-            e.target.style.color = "#0056b3"; // Biru lebih gelap
-            e.target.style.transform = "translateY(-3px)"; // Sedikit naik
+            e.target.style.color = isScrolled ? "#0056b3" : "#e0e0e0"; // Efek hover berdasarkan transparansi
+            e.target.style.transform = "translateY(-3px)";
           }}
           onMouseLeave={(e) => {
-            e.target.style.color = "#007bff";
+            e.target.style.color = isScrolled ? "#007bff" : "#ffffff";
             e.target.style.transform = "translateY(0)";
           }}
         >
@@ -67,7 +84,11 @@ const Navbar = () => {
                     className="nav-link"
                     to={`/${page === "home" ? "" : page}`}
                     style={{
-                      color: isActive ? "#007bff" : "#212529",
+                      color: isScrolled
+                        ? isActive
+                          ? "#007bff"
+                          : "#212529"
+                        : "#ffffff", // Warna menu berubah menjadi putih saat transparan
                       fontWeight: "500",
                       padding: "10px 15px",
                       position: "relative",
@@ -75,10 +96,11 @@ const Navbar = () => {
                       transition: "all 0.3s ease-in-out",
                     }}
                     onMouseEnter={(e) =>
-                      (e.target.style.color = "#007bff")
+                      (e.target.style.color = isScrolled ? "#007bff" : "#e0e0e0")
                     }
                     onMouseLeave={(e) => {
-                      if (!isActive) e.target.style.color = "#212529";
+                      if (!isActive)
+                        e.target.style.color = isScrolled ? "#212529" : "#ffffff";
                     }}
                   >
                     {item}
@@ -90,7 +112,7 @@ const Navbar = () => {
                         left: 0,
                         width: isActive ? "100%" : "0%",
                         height: "2px",
-                        backgroundColor: "#007bff",
+                        backgroundColor: isScrolled ? "#007bff" : "#ffffff",
                         transition: "width 0.3s ease-in-out",
                       }}
                     ></span>
