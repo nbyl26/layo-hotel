@@ -4,19 +4,24 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const isHomePage = location.pathname === "/"; // Periksa apakah halaman home
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 70); // Navbar menjadi solid jika scroll lebih dari 50px
-    };
+    if (isHomePage) {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 70); // Navbar menjadi solid jika scroll lebih dari 70px
+      };
 
-    handleScroll(); // Jalankan sekali untuk menentukan transparansi awal
-    window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Jalankan sekali untuk menentukan transparansi awal
+      window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    } else {
+      setIsScrolled(true); // Navbar solid di halaman selain home
+    }
+  }, [isHomePage]);
 
   return (
     <nav

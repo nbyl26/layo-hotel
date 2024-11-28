@@ -1,30 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import '../styles/hero.css';  
+import "../styles/hero.css";
 
-import BgImage from "../assets/images/bg-hotel.png";
+// Import gambar secara eksplisit
+import BgImage1 from "../assets/images/bg-hotel1.png";
+import BgImage2 from "../assets/images/bg-hotel2.png";
+import BgImage3 from "../assets/images/bg-hotel3.png";
 
 const HeroSection = () => {
+  const images = [BgImage1, BgImage2, BgImage3]; // Masukkan gambar dalam array
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
+    // Tampilkan konten dengan animasi
     setTimeout(() => {
       setShowContent(true);
-    }, 500); // Delay untuk animasi
-  }, []);
+    }, 500);
+
+    // Ganti gambar secara otomatis
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Ganti gambar setiap 5 detik
+
+    return () => clearInterval(interval); // Bersihkan interval saat komponen unmount
+  }, [images.length]);
 
   return (
     <div
       className="hero-section"
       style={{
-        backgroundImage: `url(${BgImage})`,
+        backgroundImage: `url(${images[currentImageIndex]})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         marginTop: "-66.3px",
         height: "100vh",
         position: "relative",
         color: "#ffffff",
-        zIndex: -1, // Pastikan hero berada di bawah navbar
+        zIndex: -1,
+        transition: "background-image 1s ease-in-out", // Efek transisi untuk pergantian gambar
       }}
     >
       <div
