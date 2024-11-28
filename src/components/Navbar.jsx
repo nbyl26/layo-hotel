@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import logo from "../assets/images/logo.png";
+
 const Navbar = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,6 +39,7 @@ const Navbar = () => {
       <div className="container">
         {/* Logo */}
         <Link
+
           className="navbar-brand"
           to="/"
           style={{
@@ -54,6 +57,12 @@ const Navbar = () => {
             e.target.style.transform = "translateY(0)";
           }}
         >
+          <img src={logo} alt="Layo-Hotel Logo"
+            style={{
+              height: "33px", // Sesuaikan ukuran logo
+              marginRight: "10px", // Memberikan jarak antara logo dan teks
+              transition: "transform 0.3s ease-in-out",
+            }} />
           Layo-Hotel
         </Link>
 
