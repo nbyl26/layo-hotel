@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Confirmation from "./pages/ConfirmationPage";
 import BookingHistory from "./pages/BookingHistory";
+import Details from "./pages/Details";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/booking-history" element={<BookingHistory />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
       </div>
       <Footer />
