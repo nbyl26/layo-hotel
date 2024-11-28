@@ -20,6 +20,7 @@ const HeroSection = () => {
         backgroundImage: `url(${BgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        marginTop: "-66.3px",
         height: "100vh",
         position: "relative",
         color: "#ffffff",

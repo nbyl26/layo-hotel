@@ -7,7 +7,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Navbar menjadi solid jika scroll lebih dari 50px
+      setIsScrolled(window.scrollY > 70); // Navbar menjadi solid jika scroll lebih dari 50px
     };
 
     handleScroll(); // Jalankan sekali untuk menentukan transparansi awal
