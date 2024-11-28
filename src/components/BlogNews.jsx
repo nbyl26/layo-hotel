@@ -1,6 +1,10 @@
 import React from "react";
 import "../styles/blog.css";
 
+import blog1 from "../assets/images/blog1.jpg";
+import blog2 from "../assets/images/blog2.jpg";
+import blog3 from "../assets/images/blog3.jpg"; 
+
 const BlogNews = () => {
   const articles = [
     {
@@ -8,7 +12,7 @@ const BlogNews = () => {
       title: "5 Tips for a Relaxing Stay at Layo-Hotel",
       excerpt:
         "Discover how to elevate your experience with these 5 essential tips. Comfort and luxury await you...",
-      image: "/path-to-image1.jpg", // Update dengan path gambar Anda
+      image: blog1, // Update dengan path gambar Anda
       date: "November 28, 2024",
       category: "Travel Tips",
     },
@@ -17,7 +21,7 @@ const BlogNews = () => {
       title: "Local Events You Can't Miss This Month",
       excerpt:
         "Immerse yourself in the vibrant culture and events happening near Layo-Hotel this month...",
-      image: "/path-to-image2.jpg", // Update dengan path gambar Anda
+      image: blog2, // Update dengan path gambar Anda
       date: "November 25, 2024",
       category: "Events",
     },
@@ -26,7 +30,7 @@ const BlogNews = () => {
       title: "Why Layo-Hotel is Perfect for Families",
       excerpt:
         "Looking for the perfect family getaway? Learn why Layo-Hotel is the ultimate destination for everyone...",
-      image: "/path-to-image3.jpg", // Update dengan path gambar Anda
+      image: blog3, // Update dengan path gambar Anda
       date: "November 20, 2024",
       category: "Family Travel",
     },
