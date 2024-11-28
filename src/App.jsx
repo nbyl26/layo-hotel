@@ -10,6 +10,7 @@ import Rooms from "./pages/Rooms";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Confirmation from "./pages/ConfirmationPage";
+import BookingHistory from "./pages/BookingHistory";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/booking-history" element={<BookingHistory />} />
         </Routes>
       </div>
       <Footer />
