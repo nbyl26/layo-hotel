@@ -25,13 +25,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-light shadow-sm sticky-top ${
-        isScrolled ? "bg-white" : "bg-transparent"
-      }`}
+      className={`navbar navbar-expand-lg navbar-light shadow-sm sticky-top ${isScrolled ? "bg-white" : "bg-transparent"
+        }`}
       style={{
         padding: "10px 20px",
         fontFamily: "'Poppins', sans-serif",
-        zIndex: "9999",
+        zIndex: "9998",
         transition: "background-color 0.3s ease-in-out", // Animasi transisi
       }}
     >
@@ -77,7 +76,7 @@ const Navbar = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav mx-auto">
-            {["Home", "Rooms", "About", "Booking History"].map((item, index) => {
+            {["Home", "Rooms", "Booking History", "About"].map((item, index) => {
               const page = item.toLowerCase().replace(" ", "-");
               const isActive =
                 location.pathname === `/${page}` ||

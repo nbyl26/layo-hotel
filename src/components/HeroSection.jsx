@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/hero.css";
 
-// Import gambar secara eksplisit
 import BgImage1 from "../assets/images/bg-hotel1.png";
 import BgImage2 from "../assets/images/bg-hotel2.png";
 import BgImage3 from "../assets/images/bg-hotel3.png";
@@ -14,7 +13,6 @@ const HeroSection = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Tampilkan konten dengan animasi
     setTimeout(() => {
       setShowContent(true);
     }, 500);
@@ -38,8 +36,8 @@ const HeroSection = () => {
         height: "100vh",
         position: "relative",
         color: "#ffffff",
-        zIndex: -1,
-        transition: "background-image 1s ease-in-out", // Efek transisi untuk pergantian gambar
+        // zIndex: -1,
+        transition: "background-image 1s ease-in-out",
       }}
     >
       <div
@@ -84,7 +82,7 @@ const HeroSection = () => {
         </p>
         <Link
           to="/rooms"
-          className={`btn btn-primary ${showContent ? "btn-animate" : ""}`}
+          className={`btn btn-primary ${showContent ? "btn-animate" : ""} btn-hover`}
           style={{
             fontSize: "1.25rem",
             padding: "10px 30px",
@@ -93,11 +91,14 @@ const HeroSection = () => {
             border: "none",
             color: "#fff",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
-            transition: "transform 0.3s ease",
+            transition: "all 0.3s ease, transform 0.3s ease",
+            position: "relative",
+            zIndex: "10000",
           }}
         >
           Book Now
         </Link>
+
       </div>
     </div>
   );

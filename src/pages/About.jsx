@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import LobbyHotel from "../assets/images/bg-hotel2.png";
+import Slider from "react-slick"; // Import React-Slick
+import LobbyHotel1 from "../assets/images/bg-hotel1.png";
+import LobbyHotel2 from "../assets/images/bg-hotel2.png";
+import LobbyHotel3 from "../assets/images/bg-hotel3.png";
 
 const About = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -7,6 +10,19 @@ const About = () => {
   useEffect(() => {
     setTimeout(() => setFadeIn(true), 200); // Efek fade-in
   }, []);
+
+  // Settings for React-Slick
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    pauseOnHover: true,
+  };
 
   return (
     <div
@@ -21,36 +37,6 @@ const About = () => {
         overflow: "hidden",
       }}
     >
-      {/* Section Background Animation */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-100px",
-          left: "-100px",
-          width: "300px",
-          height: "300px",
-          background: "linear-gradient(45deg, #007bff, #28a745)",
-          opacity: "0.2",
-          borderRadius: "50%",
-          animation: "float 6s ease-in-out infinite",
-          zIndex: "-1",
-        }}
-      ></div>
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-120px",
-          right: "-120px",
-          width: "400px",
-          height: "400px",
-          background: "linear-gradient(135deg, #28a745, #007bff)",
-          opacity: "0.15",
-          borderRadius: "50%",
-          animation: "float-reverse 6s ease-in-out infinite",
-          zIndex: "-1",
-        }}
-      ></div>
-
       {/* Title */}
       <h2
         className={`text-center mb-4 ${fadeIn ? "fade-in" : ""}`}
@@ -76,26 +62,40 @@ const About = () => {
           animationDelay: "0.3s",
         }}
       >
-        At Layo-Hotel, we redefine luxury with elegance and warmth. Nestled in the heart of the city,
-        our hotel is a sanctuary where every detail is designed to provide you with an unparalleled
-        experience. Whether you're here for business or leisure, we ensure your stay will be
-        memorable.
+        Layo-Hotel adalah tempat di mana kemewahan bertemu kenyamanan. Kami menawarkan
+        pengalaman tak terlupakan dengan layanan kelas dunia, kamar mewah, dan suasana
+        yang ramah. Setiap tamu adalah prioritas kami, dan kami berkomitmen untuk memberikan
+        yang terbaik di setiap kunjungan Anda.
       </p>
 
-      {/* Image with Hover Effect */}
-      <div className="text-center mt-5">
-        <img
-          src={LobbyHotel}
-          alt="About Layo-Hotel"
-          className={`img-fluid rounded shadow-lg ${fadeIn ? "zoom-in" : ""}`}
-          style={{
-            maxHeight: "500px",
-            objectFit: "cover",
-            transition: "transform 0.5s ease-in-out",
-          }}
-          onMouseEnter={(e) => (e.target.style.transform = "scale(1.05)")}
-          onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
-        />
+      {/* Image Slider */}
+      <div
+        className="image-slider mt-4"
+        style={{
+          maxWidth: "800px",
+          margin: "0 auto",
+        }}
+      >
+        <Slider {...settings}>
+          {[LobbyHotel1, LobbyHotel2, LobbyHotel3].map((image, index) => (
+            <div key={index}>
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                style={{
+                  width: "100%",
+                  height: "450px", // Ukuran default untuk gambar
+                  objectFit: "cover", // Menyesuaikan gambar dengan container
+                  borderRadius: "15px",
+                  boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
+                  transition: "transform 0.5s ease-in-out",
+                }}
+                onMouseEnter={(e) => (e.target.style.transform = "scale(1.05)")}
+                onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
 
       {/* Our Commitment Section */}
@@ -121,10 +121,9 @@ const About = () => {
             animationDelay: "0.6s",
           }}
         >
-          Layo-Hotel is dedicated to crafting an unforgettable experience for every guest. With
-          modern amenities, exceptional service, and a team that cares, we strive to make every
-          moment extraordinary. From personalized experiences to impeccable hospitality, your
-          satisfaction is our mission.
+          Di Layo-Hotel, kami berkomitmen untuk memastikan setiap pengalaman tamu tidak
+          terlupakan. Dengan fasilitas modern dan layanan terbaik, kami menciptakan
+          lingkungan yang nyaman, aman, dan menyenangkan untuk Anda.
         </p>
       </div>
 

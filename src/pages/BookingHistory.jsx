@@ -53,8 +53,10 @@ const BookingHistory = () => {
                 <h1
                     className="fw-bold"
                     style={{
-                        fontSize: "2.5rem",
                         color: "#007bff",
+                        fontWeight: "800",
+                        fontSize: "2.5rem",
+                        letterSpacing: "1px",
                     }}
                 >
                     Booking History

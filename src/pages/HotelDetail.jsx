@@ -18,37 +18,37 @@ const HotelDetail = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
+
     const checkInDate = document.getElementById("checkInDate").value;
     const checkOutDate = document.getElementById("checkOutDate").value;
     const guests = document.getElementById("guests").value;
-  
+
     if (!checkInDate || !checkOutDate || !guests) {
       alert("Please fill in all fields.");
       setLoading(false);
       return;
     }
-  
+
     try {
       const reservationData = {
-        roomTitle: room.title, 
+        roomTitle: room.title,
         roomPrice: room.price,
         roomImage: room.image,
         checkInDate,
         checkOutDate,
         guests,
       };
-  
+
       const response = await fetch("http://localhost:3001/reservations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(reservationData), 
+        body: JSON.stringify(reservationData),
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok) {
         alert("Reservation successful!");
         navigate("/confirmation", { state: { reservation: reservationData } });
@@ -179,6 +179,7 @@ const HotelDetail = () => {
               type="submit"
               className="btn btn-primary w-100"
               style={{
+                background: "linear-gradient(90deg, #007bff, #0056b3)",
                 padding: "12px",
                 fontWeight: "600",
                 borderRadius: "30px",
@@ -186,6 +187,12 @@ const HotelDetail = () => {
                 border: "none",
                 transition: "background-color 0.3s",
               }}
+              onMouseEnter={(e) =>
+                (e.target.style.background = "linear-gradient(90deg, #0056b3, #003f7f)")
+              }
+              onMouseLeave={(e) =>
+                (e.target.style.background = "linear-gradient(90deg, #007bff, #0056b3)")
+              }
               disabled={loading}
             >
               {loading ? "Processing..." : "Reserve Now"}

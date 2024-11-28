@@ -1,9 +1,16 @@
 .hero-section .content.fade-in {
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-  }
-  
-  .hero-section .btn-animate:hover {
-    transform: scale(1.1);
-  }
-  
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-section .btn-animate:hover {
+  transform: scale(1.1);
+}
+
+/* Hover effect untuk tombol */
+.btn-hover:hover {
+  background: linear-gradient(90deg, #28a745, #007bff); /* Pindah gradien saat hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih tebal saat hover */
+  transform: translateY(-5px); /* Efek angkat tombol */
+}
+
