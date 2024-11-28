@@ -28,17 +28,12 @@ const Features = () => {
             <div className="card border-0 shadow-sm h-100">
               <div className="card-body text-center">
                 <i
-                  className={`bi ${feature.icon}`}
-                  style={{
-                    fontSize: "3rem",
-                    color: "#007bff",
-                    transition: "transform 0.3s ease",
-                  }}
-                ></i>
-                <h5 className="mt-3" style={{ color: "#007bff" }}>
+                  className={`features-icon ${feature.icon}`}
+                  ></i>
+                <h5 className="features-title">
                   {feature.title}
                 </h5>
-                <p>{feature.description}</p>
+                <p className="features-description">{feature.description}</p>
               </div>
             </div>
           </div>

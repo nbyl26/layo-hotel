@@ -7,4 +7,28 @@
   .feature-animate:hover .bi {
     transform: scale(1.1);
   }
+
+  .features-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
   
+  .card-body:hover .features-icon {
+    color: #0056b3;
+  }
+  
+  .features-title {
+    color: #007bff;
+  }
+  
+  .card-body:hover .features-title {
+    color: #0056b3;
+  }
+
+  .features-description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 25px;
+  }

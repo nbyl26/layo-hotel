@@ -1,6 +1,7 @@
 /* Styling untuk Service Components */
 .service-container {
     background-color: #f7f7f7;
+    margin-right: 11.8px;
   }
   
   .service-box {
@@ -21,25 +22,25 @@
   
   .service-icon {
     font-size: 3rem;
-    color: #28a745;
+    color: #007bff;
     margin-bottom: 20px;
     transition: color 0.3s ease;
   }
   
   .service-box:hover .service-icon {
-    color: #007bff;
+    color: #0056b3;
   }
   
   .service-title {
     font-size: 1.75rem;
     font-weight: 600;
-    color: #333;
+    color: #007bff;
     margin-bottom: 15px;
     transition: color 0.3s ease;
   }
   
   .service-box:hover .service-title {
-    color: #007bff;
+    color: #0056b3;
   }
   
   .service-description {
@@ -48,22 +49,6 @@
     margin-bottom: 25px;
   }
   
-  .service-btn {
-    background: linear-gradient(90deg, #007bff, #28a745);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 1.25rem;
-    transition: all 0.3s ease, transform 0.3s ease;
-    border: none;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  .service-btn:hover {
-    background: linear-gradient(90deg, #28a745, #007bff);
-    transform: translateY(-5px);
-  }
   
   @media (max-width: 768px) {
     .service-box {

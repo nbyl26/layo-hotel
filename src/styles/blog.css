@@ -1,0 +1,26 @@
+.blog-news-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+  }
+  
+  .blog-news-section .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .blog-news-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog-news-section .card-img-container:hover img {
+    transform: scale(1.1);
+  }
+  
+  .blog-news-section .card-title:hover {
+    color: #007bff;
+  }
+  
+  .blog-news-section .card-body {
+    padding: 20px;
+  }
+  
