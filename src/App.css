@@ -65,3 +65,10 @@ footer {
   color: #333;
   line-height: 1.8;
 }
+
+/* Navbar */
+@media (max-width: 991px) {
+  .nav-item span{
+    display: none;
+  }
+}

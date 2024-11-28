@@ -1,9 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-// import '../styles/navbar.css';
 
 const Navbar = () => {
-  const location = useLocation(); // Mengetahui halaman saat ini
+  const location = useLocation(); 
 
   return (
     <nav
@@ -55,7 +54,6 @@ const Navbar = () => {
           className="collapse navbar-collapse justify-content-between"
           id="navbarNav"
         >
-          {/* Menu Tengah */}
           <ul className="navbar-nav mx-auto">
             {["Home", "Rooms", "About"].map((item, index) => {
               const page = item.toLowerCase();
@@ -84,7 +82,6 @@ const Navbar = () => {
                     }}
                   >
                     {item}
-                    {/* Underline Animation */}
                     <span
                       style={{
                         content: "''",

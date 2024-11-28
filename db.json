@@ -38,6 +38,15 @@
       "checkInDate": "2024-11-29",
       "checkOutDate": "2024-11-30",
       "guests": "2"
+    },
+    {
+      "id": "830a",
+      "roomTitle": "Family Room",
+      "roomPrice": "$200/night",
+      "roomImage": "/src/assets/images/Family-Room.jpg?t=1732730767089",
+      "checkInDate": "2024-12-03",
+      "checkOutDate": "2024-12-05",
+      "guests": "-2"
     }
   ]
 }

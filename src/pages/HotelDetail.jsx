@@ -30,9 +30,8 @@ const HotelDetail = () => {
     }
   
     try {
-      // Simpan data kamar bersama data form
       const reservationData = {
-        roomTitle: room.title, // Ambil dari state atau prop
+        roomTitle: room.title, 
         roomPrice: room.price,
         roomImage: room.image,
         checkInDate,
@@ -40,13 +39,12 @@ const HotelDetail = () => {
         guests,
       };
   
-      // Kirim data ke backend atau JSON lokal
       const response = await fetch("http://localhost:3001/reservations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(reservationData), // Gabungkan semua data di sini
+        body: JSON.stringify(reservationData), 
       });
   
       const result = await response.json();
