@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/faq.css";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqData = [
   {
@@ -37,21 +38,22 @@ const FAQ = () => {
         <h2 className="faq-title">Frequently Asked Questions</h2>
         <div className="faq-list">
           {faqData.map((item, index) => (
-            <div
-              key={index}
-              className={`faq-item ${activeIndex === index ? "active" : ""}`}
-              onClick={() => toggleFAQ(index)}
-            >
-              <div className="faq-header">
+            <div key={index} className="faq-item">
+              <div
+                className="faq-header"
+                onClick={() => toggleFAQ(index)}
+              >
                 <h3 className="faq-question">{item.question}</h3>
-                <div className={`faq-icon ${activeIndex === index ? "rotate" : ""}`}></div>
+                <div className="faq-icon">
+                  {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+                </div>
               </div>
               <div
                 className="faq-answer"
                 style={{
                   maxHeight: activeIndex === index ? "150px" : "0",
                   opacity: activeIndex === index ? 1 : 0,
-                  transition: "all 0.5s ease-in-out",
+                  transition: "all 0.3s ease",
                 }}
               >
                 {item.answer}
