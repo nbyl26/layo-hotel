@@ -1,93 +1,66 @@
 .faq-section {
-    background: linear-gradient(135deg, #007bff, #28a745);
-    padding: 80px 20px;
-    color: #ffffff;
+    background-color: #f9f9f9;
+    padding: 60px 20px;
   }
   
   .container {
-    /* max-width: 800px; */
     margin: 0 auto;
     text-align: center;
   }
   
   .faq-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 50px;
-    color: #ffffff;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    color: #333;
   }
   
   .faq-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
   
   .faq-item {
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .faq-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
   
   .faq-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
-    background: linear-gradient(135deg, #007bff, #28a745);
-    color: #ffffff;
-    font-size: 1.25rem;
-    font-weight: bold;
-    position: relative;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-header:hover {
+    background-color: #f0f0f0;
   }
   
   .faq-question {
     margin: 0;
+    font-size: 1.1rem;
+    color: #444;
+    text-align: left;
   }
   
   .faq-icon {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    position: relative;
-    transition: transform 0.3s ease;
-  }
-  
-  .faq-icon:after,
-  .faq-icon:before {
-    content: "";
-    position: absolute;
-    background: #ffffff;
-    width: 10px;
-    height: 2px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .faq-icon:before {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-  
-  .faq-icon.rotate {
-    transform: rotate(180deg);
+    font-size: 1.2rem;
+    color: #007bff;
   }
   
   .faq-answer {
-    padding: 20px 30px;
-    font-size: 1rem;
+    padding: 15px 20px;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: #555;
+    text-align: left;
+    border-top: 1px solid #ddd;
     overflow: hidden;
   }
   
