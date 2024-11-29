@@ -42,17 +42,16 @@ const FAQ = () => {
               className={`faq-item ${activeIndex === index ? "active" : ""}`}
               onClick={() => toggleFAQ(index)}
             >
-              <div className="faq-question">
-                {item.question}
-                <span className="faq-icon">
-                  {activeIndex === index ? "−" : "+"}
-                </span>
+              <div className="faq-header">
+                <h3 className="faq-question">{item.question}</h3>
+                <div className={`faq-icon ${activeIndex === index ? "rotate" : ""}`}></div>
               </div>
               <div
                 className="faq-answer"
                 style={{
-                  maxHeight: activeIndex === index ? "100px" : "0",
-                  transition: "max-height 0.4s ease",
+                  maxHeight: activeIndex === index ? "150px" : "0",
+                  opacity: activeIndex === index ? 1 : 0,
+                  transition: "all 0.5s ease-in-out",
                 }}
               >
                 {item.answer}
