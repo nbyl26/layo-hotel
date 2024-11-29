@@ -22,7 +22,7 @@ const testimonials = [
     id: 2,
     name: "Zri Anon-mali",
     review:
-      "Beautiful hotel with amazing facilities. The staff were friendly and attentive, making our vacation perfect.",
+      "Hotelnya sangat indah dan bersih, sangat direkomendasikan untuk liburan",
     rating: 4.5,
     image: Fazri, 
     date: "Stayed: October 2024",
@@ -31,7 +31,7 @@ const testimonials = [
     id: 3,
     name: "Ryy Kertapati",
     review:
-      "From the clean rooms to the delicious meals, everything exceeded our expectations. Definitely coming back!",
+      "Mulai dari kamar yang nyaman hingga makanan yang enak, semuanya sempurna cuyy",
     rating: 5,
     image: Fachry,
     date: "Stayed: September 2024",
@@ -40,7 +40,7 @@ const testimonials = [
     id: 4,
     name: "Adit Bohlam",
     review:
-      "From the clean rooms to the delicious meals, everything exceeded our expectations. Definitely coming back!",
+      "Bersih, nyaman, dan pelayanannya sangat ramah, sangat puas menginap disini",
     rating: 5,
     image: Adit,
     date: "Stayed: September 2024",
