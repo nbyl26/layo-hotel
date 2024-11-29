@@ -1,3 +1,7 @@
+.container-features{
+  background-color: #f9f9f9;
+  margin-right: 11.7px;
+}
 .feature-animate {
     opacity: 1;
     transform: translateY(0);

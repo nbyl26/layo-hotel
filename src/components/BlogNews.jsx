@@ -37,7 +37,8 @@ const BlogNews = () => {
   ];
 
   return (
-    <div className="blog-news-section py-5" style={{ backgroundColor: "#f9f9f9" }}>
+    // <div className="blog-news-section py-5" style={{ backgroundColor: "#f9f9f9" }}>
+    <div className="blog-news-section py-5">
       <div className="container">
         <h2
           className="text-center mb-4"

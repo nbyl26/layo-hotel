@@ -18,8 +18,8 @@ const Features = () => {
   }, []);
 
   return (
-    <div className="container text-center my-5">
-      <h2 className="mb-4" style={{ color: "#007bff", fontWeight: "700" }}>
+    <div className="container-features text-center py-5">
+      <h2 className="mb-5" style={{ color: "#007bff", fontWeight: "700" }}>
         Why Choose Us
       </h2>
       <div className="row">
