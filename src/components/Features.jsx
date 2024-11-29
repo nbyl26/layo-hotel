@@ -5,7 +5,7 @@ const Features = () => {
   const features = [
     { icon: "bi-house-door-fill", title: "Luxury Rooms", description: "Kamar yang luas dan nyaman dirancang untuk relaksasi Anda." },
     { icon: "bi-wifi", title: "Free Wi-Fi", description: "Tetap terhubung dengan internet berkecepatan tinggi di seluruh properti." },
-    { icon: "bi-cup-straw", title: "Café & Dining", description: "Delicious food and drinks served with love." },
+    { icon: "bi-cup-straw", title: "Café & Dining", description: "Makanan dan minuman lezat disajikan dengan cinta." },
     { icon: "bi-geo-alt-fill", title: "Prime Locations", description: "Situated in the heart of tourist attractions." },
   ];
 
