@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles/faq.css";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
+import HotelStaff from "../assets/images/faq-image.png";
+
 const faqData = [
   {
     question: "What is the check-in and check-out time?",
@@ -39,7 +41,7 @@ const FAQ = () => {
         <div className="faq-wrapper">
           <div className="faq-image-container">
             <img
-              src="path/to/your/hotel-staff-image.jpg" // Ganti dengan path gambar pelayan
+              src={HotelStaff} 
               alt="Hotel Staff"
               className="faq-image"
             />

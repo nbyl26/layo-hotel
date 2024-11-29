@@ -1,81 +1,80 @@
 .faq-section {
     background-color: #f9f9f9;
     padding: 60px 20px;
-  }
-  
-  .container {
+}
+
+.container {
     margin: 0 auto;
     text-align: center;
-  }
-  
-  .faq-title {
+}
+
+.faq-title {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 40px;
     color: #007bff;
     text-transform: uppercase;
-  }
-  
-  .faq-wrapper {
+}
+
+.faq-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-  }
-  
-  .faq-image-container {
+}
+
+.faq-image-container {
     width: 30%;
     max-width: 300px;
-    margin-right: 30px;
-  }
-  
-  .faq-image {
+    margin-left: 40px;
+}
+
+.faq-image {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Gambar dipotong agar rapi */
+    object-fit: cover;
     border-radius: 8px;
-  }
-  
-  .faq-list {
+}
+
+.faq-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-left: 50%;
-  }
-  
-  .faq-item {
+}
+
+.faq-item {
     background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-  }
-  
-  .faq-header {
+}
+
+.faq-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .faq-header:hover {
+}
+
+.faq-header:hover {
     background-color: #f0f0f0;
-  }
-  
-  .faq-question {
+}
+
+.faq-question {
     margin: 0;
     font-size: 1.1rem;
     color: #444;
     text-align: left;
-  }
-  
-  .faq-icon {
+}
+
+.faq-icon {
     font-size: 1.2rem;
     color: #007bff;
-  }
-  
-  .faq-answer {
+}
+
+.faq-answer {
     padding: 15px 20px;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -83,5 +82,47 @@
     text-align: left;
     border-top: 1px solid #ddd;
     overflow: hidden;
-  }
-  
+}
+
+@media (max-width: 1400px) {
+    .faq-image-container {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .faq-image-container {
+        display: none;
+    }
+    .faq-list {
+        margin-left: 0;
+        margin-right: 0;
+        position: relative;
+    }
+}
+
+@media (max-width: 992px) {
+    .faq-image-container {
+        display: none;
+    }
+    .faq-list {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .faq-image-container {
+        display: none;
+    }
+
+    .faq-list {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
