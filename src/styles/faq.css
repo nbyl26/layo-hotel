@@ -12,13 +12,15 @@
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 40px;
-    color: #333;
+    color: #007bff;
+    text-transform: uppercase;
   }
   
   .faq-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-left: 50%;
   }
   
   .faq-item {
