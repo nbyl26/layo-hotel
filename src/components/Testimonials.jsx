@@ -13,7 +13,7 @@ const testimonials = [
     id: 1,
     name: "Akam Duyung",
     review:
-      "The service was top-notch, and the rooms were incredibly cozy! Highly recommended for a luxurious stay.",
+      "Pelayanannya sangat baik dan kamarnya sangat mewah, Mantap!!",
     rating: 5,
     image: Akram, 
     date: "Stayed: November 2024",
