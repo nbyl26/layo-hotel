@@ -13,7 +13,7 @@ const testimonials = [
     id: 1,
     name: "Akam Duyung",
     review:
-      "Pelayanannya sangat baik dan kamarnya sangat mewah, Mantap!!",
+      "Pelayanannya sangat baik dan kamarnya mewah, ini pengalaman menginap terbaik saya, Mantapp!!",
     rating: 5,
     image: Akram, 
     date: "Stayed: November 2024",
@@ -23,7 +23,7 @@ const testimonials = [
     name: "Zri Anon-mali",
     review:
       "Hotelnya sangat indah dan bersih, sangat direkomendasikan untuk liburan",
-    rating: 4.5,
+    rating: 5,
     image: Fazri, 
     date: "Stayed: October 2024",
   },
