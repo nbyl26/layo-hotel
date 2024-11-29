@@ -17,6 +17,15 @@
       "checkInDate": "2024-12-03",
       "checkOutDate": "2024-12-05",
       "guests": "4"
+    },
+    {
+      "id": "d96a",
+      "roomTitle": "Deluxe Room",
+      "roomPrice": "Rp 1.500.000/night",
+      "roomImage": "/src/assets/images/Deluxe-Room.jpg",
+      "checkInDate": "2024-11-30",
+      "checkOutDate": "2024-12-02",
+      "guests": "4"
     }
   ]
 }
