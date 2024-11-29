@@ -3,32 +3,46 @@ import "../styles/testimonials.css";
 import { FaStar } from "react-icons/fa";
 import { FaQuoteLeft } from "react-icons/fa";
 
+import Akram from '../assets/images/1.jpg';
+import Fazri from '../assets/images/2.jpg';
+import Fachry from '../assets/images/3.jpg';
+import Adit from '../assets/images/4.jpg';
+
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Akam Duyung",
     review:
       "The service was top-notch, and the rooms were incredibly cozy! Highly recommended for a luxurious stay.",
     rating: 5,
-    image: "path-to-image1.jpg", 
+    image: Akram, 
     date: "Stayed: November 2024",
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "Zri Anon-mali",
     review:
       "Beautiful hotel with amazing facilities. The staff were friendly and attentive, making our vacation perfect.",
     rating: 4.5,
-    image: "path-to-image2.jpg", 
+    image: Fazri, 
     date: "Stayed: October 2024",
   },
   {
     id: 3,
-    name: "Michael Johnson",
+    name: "Ryy Kertapati",
     review:
       "From the clean rooms to the delicious meals, everything exceeded our expectations. Definitely coming back!",
     rating: 5,
-    image: "path-to-image3.jpg",
+    image: Fachry,
+    date: "Stayed: September 2024",
+  },
+  {
+    id: 4,
+    name: "Adit Bohlam",
+    review:
+      "From the clean rooms to the delicious meals, everything exceeded our expectations. Definitely coming back!",
+    rating: 5,
+    image: Adit,
     date: "Stayed: September 2024",
   },
 ];
@@ -37,7 +51,7 @@ const Testimonials = () => {
   return (
     <div className="testimonials-section" style={{ padding: "50px 20px" }}>
       <div className="container">
-        <h2 className="section-title">What Our Guests Say</h2>
+        <h3 className="section-title">What Our Guests Say</h3>
         <div className="testimonial-cards">
           {testimonials.map((testimonial) => (
             <div className="testimonial-card" key={testimonial.id}>

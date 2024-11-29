@@ -1,0 +1,93 @@
+.testimonials-section {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    text-align: center;
+    color: #333;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #007bff;
+    text-transform: uppercase;
+  }
+  
+  .testimonial-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .testimonial-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  
+  .testimonial-info {
+    text-align: left;
+  }
+  
+  .guest-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #007bff;
+  }
+  
+  .stay-date {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .card-body {
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .review-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .quote-icon {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .card-footer {
+    text-align: left;
+  }
+  
+  .star-rating {
+    display: flex;
+    gap: 5px;
+  }
+  
