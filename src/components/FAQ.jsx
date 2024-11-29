@@ -1,0 +1,68 @@
+import React, { useState } from "react";
+import "../styles/faq.css";
+
+const faqData = [
+  {
+    question: "What is the check-in and check-out time?",
+    answer: "Check-in starts at 3 PM and check-out is until 11 AM. Early check-in and late check-out are subject to availability.",
+  },
+  {
+    question: "Can I cancel my reservation for free?",
+    answer: "Cancellations are free if made 48 hours before your check-in date. Otherwise, a one-night stay fee may apply.",
+  },
+  {
+    question: "Is breakfast included in the booking price?",
+    answer: "Yes, a complimentary breakfast is included in all our room rates.",
+  },
+  {
+    question: "Do you have parking facilities?",
+    answer: "Yes, we offer free secure parking for all our guests.",
+  },
+  {
+    question: "Are pets allowed in the hotel?",
+    answer: "Unfortunately, pets are not allowed in the hotel premises except for service animals.",
+  },
+];
+
+const FAQ = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
+
+  return (
+    <div className="faq-section">
+      <div className="container">
+        <h2 className="faq-title">Frequently Asked Questions</h2>
+        <div className="faq-list">
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className={`faq-item ${activeIndex === index ? "active" : ""}`}
+              onClick={() => toggleFAQ(index)}
+            >
+              <div className="faq-question">
+                {item.question}
+                <span className="faq-icon">
+                  {activeIndex === index ? "−" : "+"}
+                </span>
+              </div>
+              <div
+                className="faq-answer"
+                style={{
+                  maxHeight: activeIndex === index ? "100px" : "0",
+                  transition: "max-height 0.4s ease",
+                }}
+              >
+                {item.answer}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FAQ;
