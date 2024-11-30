@@ -8,10 +8,9 @@ const About = () => {
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setFadeIn(true), 200); // Efek fade-in
+    setTimeout(() => setFadeIn(true), 200); 
   }, []);
 
-  // Settings for React-Slick
   const settings = {
     dots: true,
     infinite: true,

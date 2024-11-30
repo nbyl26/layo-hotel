@@ -44,7 +44,7 @@ const BookingHistory = () => {
         <div
             className="container my-5"
             style={{
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: "'Poppins', sans-serif", 
                 color: "#444",
             }}
         >
@@ -53,10 +53,11 @@ const BookingHistory = () => {
                 <h1
                     className="fw-bold"
                     style={{
-                        color: "#007bff",
-                        fontWeight: "800",
-                        fontSize: "2.5rem",
-                        letterSpacing: "1px",
+                        color: "#007bff",         
+                        fontWeight: "800",         
+                        fontSize: "2.5rem",        
+                        letterSpacing: "1px",      
+                        fontFamily: "'Poppins', sans-serif", 
                     }}
                 >
                     Booking History
