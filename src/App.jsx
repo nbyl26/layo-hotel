@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Confirmation from "./pages/ConfirmationPage";
 import BookingHistory from "./pages/BookingHistory";
 import Details from "./pages/Details";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/booking-history" element={<BookingHistory />} />
           <Route path="/details" element={<Details />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
       <Footer />

@@ -1,0 +1,44 @@
+.error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.container {
+    text-align: center;
+}
+
+.error-title {
+    font-size: 10rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.error-subtitle {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.error-text {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.error-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.error-btn:hover {
+    background-color: #0056b3;
+}

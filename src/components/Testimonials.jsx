@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Zri Anon-mali",
+    name: "Zri Anon-Mali",
     review:
       "Hotelnya sangat indah dan bersih, sangat direkomendasikan untuk liburan",
     rating: 5,
