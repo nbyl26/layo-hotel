@@ -6,22 +6,22 @@ import logo from "../assets/images/logo.png";
 const Navbar = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const isHomePage = location.pathname === "/"; // Periksa apakah halaman home
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     if (isHomePage) {
       const handleScroll = () => {
-        setIsScrolled(window.scrollY > 70); // Navbar menjadi solid jika scroll lebih dari 70px
+        setIsScrolled(window.scrollY > 70); 
       };
 
-      handleScroll(); // Jalankan sekali untuk menentukan transparansi awal
+      handleScroll(); 
       window.addEventListener("scroll", handleScroll);
 
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
     } else {
-      setIsScrolled(true); // Navbar solid di halaman selain home
+      setIsScrolled(true); 
     }
   }, [isHomePage]);
 
@@ -33,7 +33,7 @@ const Navbar = () => {
         padding: "10px 20px",
         fontFamily: "'Poppins', sans-serif",
         zIndex: "9998",
-        transition: "background-color 0.3s ease-in-out", // Animasi transisi
+        transition: "background-color 0.3s ease-in-out",
       }}
     >
       <div className="container">
@@ -44,12 +44,12 @@ const Navbar = () => {
           to="/"
           style={{
             fontWeight: "700",
-            color: isScrolled ? "#007bff" : "#ffffff", // Warna logo berubah berdasarkan posisi scroll
+            color: isScrolled ? "#007bff" : "#ffffff", 
             fontSize: "1.5rem",
             transition: "all 0.3s ease-in-out",
           }}
           onMouseEnter={(e) => {
-            e.target.style.color = isScrolled ? "#0056b3" : "#e0e0e0"; // Efek hover berdasarkan transparansi
+            e.target.style.color = isScrolled ? "#0056b3" : "#e0e0e0";
             e.target.style.transform = "translateY(-3px)";
           }}
           onMouseLeave={(e) => {
@@ -59,8 +59,8 @@ const Navbar = () => {
         >
           <img src={logo} alt="Layo-Hotel Logo"
             style={{
-              height: "33px", // Sesuaikan ukuran logo
-              marginRight: "10px", // Memberikan jarak antara logo dan teks
+              height: "33px", 
+              marginRight: "10px", 
               transition: "transform 0.3s ease-in-out",
             }} />
           Layo-Hotel
@@ -85,7 +85,7 @@ const Navbar = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav mx-auto">
-            {["Home", "Rooms", "Booking History", "About"].map((item, index) => {
+            {["Home", "Rooms", "Event & Meeting Rooms", "Booking History", "About"].map((item, index) => {
               const page = item.toLowerCase().replace(" ", "-");
               const isActive =
                 location.pathname === `/${page}` ||
@@ -101,7 +101,7 @@ const Navbar = () => {
                         ? isActive
                           ? "#007bff"
                           : "#212529"
-                        : "#ffffff", // Warna menu berubah menjadi putih saat transparan
+                        : "#ffffff", 
                       fontWeight: "500",
                       padding: "10px 15px",
                       position: "relative",

@@ -8,7 +8,10 @@ const Booking = () => {
     date: '',
     duration: '',
   });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
 
+  // Handle input field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -17,9 +20,44 @@ const Booking = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);  // Kirim data ke backend atau simpan ke database
+    setLoading(true);
+
+    const reservationData = {
+      roomTitle: formData.roomType,
+      roomPrice: formData.roomType === "Meeting Room 1" ? "Rp 7.000.000/day" : 
+                 formData.roomType === "Conference Hall" ? "Rp 30.000.000/day" : "Rp 100.000.000/day",
+      roomImage: formData.roomType === "Meeting Room 1" ? "/src/assets/images/Meeting-Room.jpg" : 
+                 formData.roomType === "Conference Hall" ? "/src/assets/images/Conference-Hall.jpg" : "/src/assets/images/Wedding-Ballroom.jpg",
+      checkInDate: formData.date,
+      checkOutDate: formData.date, // You can modify this logic to accommodate a check-out date if needed
+      guests: formData.duration, // Modify this if the duration doesn't relate to the number of guests
+    };
+
+    try {
+      const response = await fetch("http://localhost:3001/reservations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reservationData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage("Reservation successful!");
+      } else {
+        setMessage(result.message || "Failed to make a reservation.");
+      }
+    } catch (error) {
+      console.error(error);
+      setMessage("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -86,10 +124,16 @@ const Booking = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary d-block mx-auto mt-3">
-          Submit Booking
+        <button type="submit" className="btn btn-primary d-block mx-auto mt-3" disabled={loading}>
+          {loading ? "Booking..." : "Submit Booking"}
         </button>
       </form>
+
+      {message && (
+        <div className="alert alert-info mt-4">
+          {message}
+        </div>
+      )}
     </div>
   );
 };
