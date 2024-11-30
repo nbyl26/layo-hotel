@@ -105,7 +105,7 @@ const EventMeetingRooms = () => {
                     Our Pricing & Packages
                 </h4>
                 <p className="lead mb-4" style={{ fontSize: "1.1rem", color: "#555", maxWidth: "800px", margin: "0 auto", lineHeight: "1.8" }}>
-                Di Layo-Hotel, kami menawarkan harga yang kompetitif untuk ruang acara dan pertemuan kami yang sesuai untuk berbagai jenis acara, mulai dari pertemuan bisnis kecil, konferensi besar, hingga pernikahan megah. Paket kami dirancang untuk memberikan nilai terbaik dengan layanan dan fasilitas luar biasa yang kami sediakan.
+                    Di Layo-Hotel, kami menawarkan harga yang kompetitif untuk ruang acara dan pertemuan kami yang sesuai untuk berbagai jenis acara, mulai dari pertemuan bisnis kecil, konferensi besar, hingga pernikahan megah. Paket kami dirancang untuk memberikan nilai terbaik dengan layanan dan fasilitas luar biasa yang kami sediakan.
                 </p>
 
                 {/* Price Cards */}
@@ -149,7 +149,7 @@ const EventMeetingRooms = () => {
                 <div className="additional-info mt-5" style={{ maxWidth: "900px", margin: "0 auto", fontSize: "1.2rem", color: "#555", lineHeight: "1.8" }}>
                     <h5 style={{ color: "#007bff", fontWeight: "700" }}>Why Choose Us?</h5>
                     <p>
-                        At Layo-Hotel, we are committed to providing a seamless and exceptional experience for your events. Our team of professionals ensures every detail is taken care of, from the moment you arrive until the event concludes. We strive to exceed your expectations and deliver outstanding value in every package.
+                        Di Layo-Hotel, kami berkomitmen untuk memberikan pengalaman yang luar biasa untuk setiap acara yang Anda adakan. Tim profesional kami memastikan setiap detail acara Anda terkelola dengan baik, mulai dari kedatangan hingga acara selesai. Kami berusaha untuk melampaui harapan Anda dan memberikan nilai luar biasa dalam setiap paket yang kami tawarkan.
                     </p>
                 </div>
             </div>
