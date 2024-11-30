@@ -1,7 +1,12 @@
-import { FaCalendarAlt, FaUsers, FaUser, FaEnvelope } from "react-icons/fa"; 
+import { FaCalendarAlt, FaUsers, FaUser, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Booking = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const room = location.state?.room;
+
     const [formData, setFormData] = useState({
         roomType: '',
         name: '',
@@ -48,6 +53,7 @@ const Booking = () => {
 
             if (response.ok) {
                 setMessage("Reservation successful!");
+                navigate("/confirmation", { state: { reservation: reservationData } });
             } else {
                 setMessage(result.message || "Failed to make a reservation.");
             }

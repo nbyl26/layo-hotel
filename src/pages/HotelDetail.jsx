@@ -140,43 +140,6 @@ const HotelDetail = () => {
             <h5 className="mb-3 text-center" style={{ fontWeight: "700", color: "#007bff" }}>
               Reserve Your Stay
             </h5>
-            {/* <div className="mb-3">
-              <label htmlFor="checkInDate" className="form-label">
-                <FontAwesomeIcon icon={faCalendarAlt} className="me-2" />
-                Check-in Date
-              </label>
-              <input
-                type="date"
-                className="form-control"
-                id="checkInDate"
-                style={{ borderRadius: "10px" }}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="checkOutDate" className="form-label">
-                <FontAwesomeIcon icon={faCalendarAlt} className="me-2" />
-                Check-out Date
-              </label>
-              <input
-                type="date"
-                className="form-control"
-                id="checkOutDate"
-                style={{ borderRadius: "10px" }}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="guests" className="form-label">
-                <FontAwesomeIcon icon={faUsers} className="me-2" />
-                Guests
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="guests"
-                placeholder="Number of guests"
-                style={{ borderRadius: "10px" }}
-              />
-            </div> */}
             <div className="mb-4">
               <label htmlFor="checkInDate" className="form-label d-flex align-items-center" style={{ fontSize: "1rem", fontWeight: "500" }}>
                 <FaCalendarAlt className="me-2" style={{ fontSize: "1.5rem", color: "#007bff" }} />
@@ -186,7 +149,7 @@ const HotelDetail = () => {
                 type="date"
                 name="date"
                 className="form-control shadow-sm border-0"
-                id="checkInDate" 
+                id="checkInDate"
                 style={{ paddingLeft: "40px" }}
               />
             </div>
@@ -199,7 +162,7 @@ const HotelDetail = () => {
                 type="date"
                 name="date"
                 className="form-control shadow-sm border-0"
-                id="checkOutDate"  
+                id="checkOutDate"
                 required
                 style={{ paddingLeft: "40px" }}
               />
@@ -214,7 +177,7 @@ const HotelDetail = () => {
                 type="number"
                 name="guest"
                 className="form-control shadow-sm border-0"
-                id="guests"  
+                id="guests"
                 placeholder="Number of guests"
                 required
                 style={{ paddingLeft: "40px" }}

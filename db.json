@@ -44,6 +44,15 @@
       "checkInDate": "2024-12-03",
       "checkOutDate": "2024-12-06",
       "guests": "3"
+    },
+    {
+      "id": "8ad4",
+      "roomTitle": "Meeting Room 1",
+      "roomPrice": "Rp 7.000.000/day",
+      "roomImage": "/src/assets/images/Meeting-Room.jpg",
+      "checkInDate": "2024-12-11",
+      "checkOutDate": "2024-12-11",
+      "guests": "5"
     }
   ]
 }
