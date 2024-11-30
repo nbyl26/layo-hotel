@@ -35,6 +35,15 @@
       "checkInDate": "2024-12-10",
       "checkOutDate": "2024-12-10",
       "guests": "10"
+    },
+    {
+      "id": "95ea",
+      "roomTitle": "Suite Room",
+      "roomPrice": "Rp 2.500.000/night",
+      "roomImage": "/src/assets/images/Suite-Room.jpg",
+      "checkInDate": "2024-12-03",
+      "checkOutDate": "2024-12-06",
+      "guests": "3"
     }
   ]
 }

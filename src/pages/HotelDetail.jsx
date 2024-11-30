@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarAlt, faUsers, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+// import { faCalendarAlt, faUsers, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { FaCalendarAlt, FaUsers } from "react-icons/fa";
 
 const HotelDetail = () => {
   const location = useLocation();
@@ -138,7 +140,7 @@ const HotelDetail = () => {
             <h5 className="mb-3 text-center" style={{ fontWeight: "700", color: "#007bff" }}>
               Reserve Your Stay
             </h5>
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label htmlFor="checkInDate" className="form-label">
                 <FontAwesomeIcon icon={faCalendarAlt} className="me-2" />
                 Check-in Date
@@ -174,7 +176,51 @@ const HotelDetail = () => {
                 placeholder="Number of guests"
                 style={{ borderRadius: "10px" }}
               />
+            </div> */}
+            <div className="mb-4">
+              <label htmlFor="checkInDate" className="form-label d-flex align-items-center" style={{ fontSize: "1rem", fontWeight: "500" }}>
+                <FaCalendarAlt className="me-2" style={{ fontSize: "1.5rem", color: "#007bff" }} />
+                Check-in Date
+              </label>
+              <input
+                type="date"
+                name="date"
+                className="form-control shadow-sm border-0"
+                id="checkInDate" 
+                style={{ paddingLeft: "40px" }}
+              />
             </div>
+            <div className="mb-4">
+              <label className="form-label d-flex align-items-center" style={{ fontSize: "1rem", fontWeight: "500" }}>
+                <FaCalendarAlt className="me-2" style={{ fontSize: "1.5rem", color: "#007bff" }} />
+                Check-out Date
+              </label>
+              <input
+                type="date"
+                name="date"
+                className="form-control shadow-sm border-0"
+                id="checkOutDate"  
+                required
+                style={{ paddingLeft: "40px" }}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="form-label d-flex align-items-center" style={{ fontSize: "1rem", fontWeight: "500" }}>
+                <FaUsers className="me-2" style={{ fontSize: "1.5rem", color: "#007bff" }} />
+                Guest
+              </label>
+              <input
+                type="number"
+                name="guest"
+                className="form-control shadow-sm border-0"
+                id="guests"  
+                placeholder="Number of guests"
+                required
+                style={{ paddingLeft: "40px" }}
+              />
+            </div>
+
             <button
               type="submit"
               className="btn btn-primary w-100"
