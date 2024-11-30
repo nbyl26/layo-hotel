@@ -131,13 +131,14 @@ const EventMeetingRooms = () => {
                                         <strong>Price:</strong> {room.price}
                                     </p>
                                     <div className="text-center mt-4" style={{ fontSize: "1rem", color: "#555" }}>
-                                        <p>Package includes:</p>
+                                        <p>Paket mencakup:</p>
                                         <ul style={{ listStyleType: "none", padding: "0" }}>
-                                            <li>High-speed Wi-Fi</li>
-                                            <li>Audio-visual equipment</li>
-                                            <li>Event coordination services</li>
-                                            <li>Refreshments (upon request)</li>
+                                            <li>Wi-Fi berkecepatan tinggi</li>
+                                            <li>Peralatan audio-visual</li>
+                                            <li>Layanan koordinasi acara</li>
+                                            <li>Minuman ringan (atas permintaan)</li>
                                         </ul>
+
                                     </div>
                                 </div>
                             </div>
