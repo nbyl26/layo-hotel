@@ -105,7 +105,7 @@ const EventMeetingRooms = () => {
                     Our Pricing & Packages
                 </h4>
                 <p className="lead mb-4" style={{ fontSize: "1.1rem", color: "#555", maxWidth: "800px", margin: "0 auto", lineHeight: "1.8" }}>
-                    At Layo-Hotel, we offer competitive pricing for our event and meeting rooms to suit all kinds of events, whether it's a small business meeting, a large conference, or a grand wedding. Our packages are designed to provide excellent value for the exceptional services and amenities we provide.
+                Di Layo-Hotel, kami menawarkan harga yang kompetitif untuk ruang acara dan pertemuan kami yang sesuai untuk berbagai jenis acara, mulai dari pertemuan bisnis kecil, konferensi besar, hingga pernikahan megah. Paket kami dirancang untuk memberikan nilai terbaik dengan layanan dan fasilitas luar biasa yang kami sediakan.
                 </p>
 
                 {/* Price Cards */}
@@ -149,7 +149,7 @@ const EventMeetingRooms = () => {
                 <div className="additional-info mt-5" style={{ maxWidth: "900px", margin: "0 auto", fontSize: "1.2rem", color: "#555", lineHeight: "1.8" }}>
                     <h5 style={{ color: "#007bff", fontWeight: "700" }}>Why Choose Us?</h5>
                     <p>
-                        Di Layo-Hotel, kami menawarkan harga yang kompetitif untuk ruang acara dan pertemuan kami yang sesuai untuk berbagai jenis acara, mulai dari pertemuan bisnis kecil, konferensi besar, hingga pernikahan megah. Paket kami dirancang untuk memberikan nilai terbaik dengan layanan dan fasilitas luar biasa yang kami sediakan.
+                        At Layo-Hotel, we are committed to providing a seamless and exceptional experience for your events. Our team of professionals ensures every detail is taken care of, from the moment you arrive until the event concludes. We strive to exceed your expectations and deliver outstanding value in every package.
                     </p>
                 </div>
             </div>
