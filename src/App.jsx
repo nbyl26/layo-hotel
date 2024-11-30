@@ -13,6 +13,7 @@ import Confirmation from "./pages/ConfirmationPage";
 import BookingHistory from "./pages/BookingHistory";
 import Details from "./pages/Details";
 import PageNotFound from "./pages/PageNotFound";
+import EventMeetingRooms from "./pages/EventMeetingRooms";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/booking-history" element={<BookingHistory />} />
           <Route path="/details" element={<Details />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="/event-meeting-rooms" element={<EventMeetingRooms />} />
         </Routes>
       </div>
       <Footer />
