@@ -11,17 +11,17 @@ const Navbar = () => {
   useEffect(() => {
     if (isHomePage) {
       const handleScroll = () => {
-        setIsScrolled(window.scrollY > 70); 
+        setIsScrolled(window.scrollY > 70);
       };
 
-      handleScroll(); 
+      handleScroll();
       window.addEventListener("scroll", handleScroll);
 
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
     } else {
-      setIsScrolled(true); 
+      setIsScrolled(true);
     }
   }, [isHomePage]);
 
@@ -44,7 +44,7 @@ const Navbar = () => {
           to="/"
           style={{
             fontWeight: "700",
-            color: isScrolled ? "#007bff" : "#ffffff", 
+            color: isScrolled ? "#007bff" : "#ffffff",
             fontSize: "1.5rem",
             transition: "all 0.3s ease-in-out",
           }}
@@ -59,8 +59,8 @@ const Navbar = () => {
         >
           <img src={logo} alt="Layo-Hotel Logo"
             style={{
-              height: "33px", 
-              marginRight: "10px", 
+              height: "33px",
+              marginRight: "10px",
               transition: "transform 0.3s ease-in-out",
             }} />
           Layo-Hotel
@@ -86,7 +86,7 @@ const Navbar = () => {
         >
           <ul className="navbar-nav mx-auto">
             {["Home", "Rooms", "Event & Meeting Rooms", "Booking History", "About"].map((item, index) => {
-              const page = item.toLowerCase().replace(" ", "-");
+              const page = item.toLowerCase().replace(" & ", "-").replace(" ", "-"); 
               const isActive =
                 location.pathname === `/${page}` ||
                 (page === "home" && location.pathname === "/");
@@ -101,7 +101,7 @@ const Navbar = () => {
                         ? isActive
                           ? "#007bff"
                           : "#212529"
-                        : "#ffffff", 
+                        : "#ffffff",
                       fontWeight: "500",
                       padding: "10px 15px",
                       position: "relative",

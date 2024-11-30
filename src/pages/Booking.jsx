@@ -11,7 +11,6 @@ const Booking = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  // Handle input field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -20,7 +19,6 @@ const Booking = () => {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -32,8 +30,8 @@ const Booking = () => {
       roomImage: formData.roomType === "Meeting Room 1" ? "/src/assets/images/Meeting-Room.jpg" : 
                  formData.roomType === "Conference Hall" ? "/src/assets/images/Conference-Hall.jpg" : "/src/assets/images/Wedding-Ballroom.jpg",
       checkInDate: formData.date,
-      checkOutDate: formData.date, // You can modify this logic to accommodate a check-out date if needed
-      guests: formData.duration, // Modify this if the duration doesn't relate to the number of guests
+      checkOutDate: formData.date, 
+      guests: formData.duration, 
     };
 
     try {
