@@ -1,78 +1,137 @@
 .service-container {
+  padding: 50px 15px;
   background-color: #f9f9f9;
-  margin-right: 11.8px;
-}
-
-.service-box {
-  position: relative;
-  background: #fff;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
   text-align: center;
 }
 
-.service-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.service-icon {
-  font-size: 3rem;
-  color: #007bff;
-  margin-bottom: 20px;
-  z-index: 1; /* Menempatkan ikon di atas overlay */
-}
-
 .service-title {
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #007bff;
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
 }
 
-.service-box:hover .service-title {
-  color: #0056b3;
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Set 3 columns */
+  gap: 30px;
+  justify-items: center;
 }
 
-.service-description {
-  font-size: 1rem;
-  color: #777;
-  margin-bottom: 25px;
+.service-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.service-image-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
 }
 
 .service-image {
   width: 100%;
-  height: auto;
-  border-radius: 15px;
-  opacity: 0.8; /* Agar gambar sedikit transparan untuk memperjelas teks */
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.overlay {
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+.service-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Efek transparan gelap */
-  border-radius: 15px;
-  z-index: 0; /* Menempatkan overlay di bawah teks dan ikon */
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
 }
 
-.service-box:hover .service-image {
-  opacity: 1; /* Mengembalikan gambar ke transparansi penuh saat hover */
+.service-card:hover .service-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Service Details Styling */
+.service-details {
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  color: #0056b3;
+}
+
+.service-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-name {
+  color: #007bff;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
-  .service-box {
-    padding: 20px;
-  }
   .service-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
+
+  .service-icon {
+    font-size: 2.5rem;
+  }
+
+  .service-name {
+    font-size: 1.3rem;
+  }
+
   .service-description {
     font-size: 0.9rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-grid {
+    grid-template-columns: 1fr;
   }
 }
