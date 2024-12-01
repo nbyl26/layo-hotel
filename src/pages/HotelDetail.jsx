@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { db, collection, addDoc } from './firebase';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCalendarAlt, faUsers, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -41,22 +43,11 @@ const HotelDetail = () => {
         guests,
       };
 
-      const response = await fetch("http://localhost:3001/reservations", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(reservationData),
-      });
+      // Menyimpan data ke Firestore
+      await addDoc(collection(db, 'reservations'), reservationData);
 
-      const result = await response.json();
-
-      if (response.ok) {
-        alert("Reservation successful!");
-        navigate("/confirmation", { state: { reservation: reservationData } });
-      } else {
-        alert(result.message || "Failed to make a reservation.");
-      }
+      alert("Reservation successful!");
+      navigate("/confirmation", { state: { reservation: reservationData } });
     } catch (error) {
       console.error(error);
       alert("An error occurred. Please try again.");
@@ -64,6 +55,7 @@ const HotelDetail = () => {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="container my-5" style={{ fontFamily: "'Poppins', sans-serif", color: "#444" }}>
