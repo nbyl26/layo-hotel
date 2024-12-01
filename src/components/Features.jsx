@@ -5,7 +5,7 @@ const Features = () => {
   const features = [
     { icon: "bi-house-door-fill", title: "Luxury Rooms", description: "Spacious and comfortable rooms designed for your relaxation." },
     { icon: "bi-wifi", title: "Free Wi-Fi", description: "Stay connected with high-speed internet throughout the property." },
-    { icon: "bi-cup-straw", title: "Café & Dining", description: "Delicious food and drinks served with love." },
+    { icon: "bi-cup-straw", title: "Cafe & Dining", description: "Delicious food and drinks served with love." },
     { icon: "bi-geo-alt-fill", title: "Prime Locations", description: "Situated in the heart of tourist attractions." },
   ];
 

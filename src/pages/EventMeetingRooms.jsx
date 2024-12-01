@@ -41,7 +41,7 @@ const EventMeetingRooms = () => {
             {/* Overview Section */}
             <div className="text-center mb-5">
                 <p className={`lead ${fadeIn ? "fade-in" : ""}`} style={{ maxWidth: "800px", margin: "0 auto", fontSize: "1.2rem", color: "#555", lineHeight: "1.8" }}>
-                    Layo-Hotel menawarkan berbagai ruang untuk berbagai acara bisnis, pertemuan, konferensi, serta acara sosial seperti pernikahan. Dilengkapi dengan fasilitas modern dan layanan profesional, kami pastikan acara Anda berjalan lancar dan sukses.
+                    Layo-Hotel offers a variety of spaces for business events, meetings, conferences, as well as social events such as weddings. Equipped with modern facilities and professional services, we ensure your event runs smoothly and successfully.
                 </p>
             </div>
 
@@ -95,7 +95,7 @@ const EventMeetingRooms = () => {
                     Our Commitment
                 </h3>
                 <p className={`mx-auto ${fadeIn ? "fade-in" : ""}`} style={{ maxWidth: "700px", fontSize: "1.2rem", color: "#555", lineHeight: "1.8", animationDelay: "0.6s" }}>
-                    Kami berkomitmen untuk memberikan pengalaman terbaik bagi setiap acara yang Anda adakan di Layo-Hotel, dengan fasilitas lengkap, layanan profesional, dan suasana yang mendukung kesuksesan acara Anda.
+                    We are committed to providing the best experience for every event you hold at Layo-Hotel, with complete facilities, professional services, and an atmosphere that ensures the success of your event.
                 </p>
             </div>
 
@@ -105,7 +105,7 @@ const EventMeetingRooms = () => {
                     Our Pricing & Packages
                 </h4>
                 <p className="lead mb-4" style={{ fontSize: "1.1rem", color: "#555", maxWidth: "800px", margin: "0 auto", lineHeight: "1.8" }}>
-                    Di Layo-Hotel, kami menawarkan harga yang kompetitif untuk ruang acara dan pertemuan kami yang sesuai untuk berbagai jenis acara, mulai dari pertemuan bisnis kecil, konferensi besar, hingga pernikahan megah. Paket kami dirancang untuk memberikan nilai terbaik dengan layanan dan fasilitas luar biasa yang kami sediakan.
+                    At Layo-Hotel, we offer competitive pricing for our event and meeting spaces suitable for various occasions, from small business meetings, large conferences, to grand weddings. Our packages are designed to provide the best value with the outstanding services and facilities we offer.
                 </p>
 
                 {/* Price Cards */}
@@ -131,12 +131,12 @@ const EventMeetingRooms = () => {
                                         <strong>Price:</strong> {room.price}
                                     </p>
                                     <div className="text-center mt-4" style={{ fontSize: "1rem", color: "#555" }}>
-                                        <p>Paket mencakup:</p>
+                                        <p>Package includes:</p>
                                         <ul style={{ listStyleType: "none", padding: "0" }}>
-                                            <li>Wi-Fi berkecepatan tinggi</li>
-                                            <li>Peralatan audio-visual</li>
-                                            <li>Layanan koordinasi acara</li>
-                                            <li>Minuman ringan (atas permintaan)</li>
+                                            <li>High-speed Wi-Fi</li>
+                                            <li>Audio-visual equipment</li>
+                                            <li>Event coordination service</li>
+                                            <li>Light refreshments (upon request)</li>
                                         </ul>
 
                                     </div>
@@ -150,7 +150,7 @@ const EventMeetingRooms = () => {
                 <div className="additional-info mt-5" style={{ maxWidth: "900px", margin: "0 auto", fontSize: "1.2rem", color: "#555", lineHeight: "1.8" }}>
                     <h5 style={{ color: "#007bff", fontWeight: "700" }}>Why Choose Us?</h5>
                     <p>
-                        Di Layo-Hotel, kami berkomitmen untuk memberikan pengalaman yang luar biasa untuk setiap acara yang Anda adakan. Tim profesional kami memastikan setiap detail acara Anda terkelola dengan baik, mulai dari kedatangan hingga acara selesai. Kami berusaha untuk melampaui harapan Anda dan memberikan nilai luar biasa dalam setiap paket yang kami tawarkan.
+                        At Layo-Hotel, we are committed to providing an exceptional experience for every event you hold. Our professional team ensures every detail of your event is well-managed, from arrival to completion. We strive to exceed your expectations and deliver outstanding value in every package we offer.
                     </p>
                 </div>
             </div>
@@ -163,7 +163,6 @@ const EventMeetingRooms = () => {
                     width: "80px",
                     background: "linear-gradient(90deg, #007bff, #28a745)",
                     margin: "30px auto",
-                    borderRadius: "50px",
                 }}
             ></div>
         </div>
