@@ -61,10 +61,9 @@ const About = () => {
           animationDelay: "0.3s",
         }}
       >
-        Layo-Hotel adalah tempat di mana kemewahan bertemu kenyamanan. Kami menawarkan
-        pengalaman tak terlupakan dengan layanan kelas dunia, kamar mewah, dan suasana
-        yang ramah. Setiap tamu adalah prioritas kami, dan kami berkomitmen untuk memberikan
-        yang terbaik di setiap kunjungan Anda.
+        Layo-Hotel is a place where luxury meets comfort. We offer an unforgettable
+        experience with world-class service, luxurious rooms, and a welcoming atmosphere.
+        Every guest is our priority, and we are committed to delivering the best on every visit.
       </p>
 
       {/* Image Slider */}
@@ -83,8 +82,8 @@ const About = () => {
                 alt={`Slide ${index + 1}`}
                 style={{
                   width: "100%",
-                  height: "450px", // Ukuran default untuk gambar
-                  objectFit: "cover", // Menyesuaikan gambar dengan container
+                  height: "450px", // Default size for image
+                  objectFit: "cover", // Fit the image inside the container
                   borderRadius: "15px",
                   boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
                   transition: "transform 0.5s ease-in-out",
@@ -120,9 +119,9 @@ const About = () => {
             animationDelay: "0.6s",
           }}
         >
-          Di Layo-Hotel, kami berkomitmen untuk memastikan setiap pengalaman tamu tidak
-          terlupakan. Dengan fasilitas modern dan layanan terbaik, kami menciptakan
-          lingkungan yang nyaman, aman, dan menyenangkan untuk Anda.
+          At Layo-Hotel, we are committed to ensuring every guest experience is unforgettable.
+          With modern facilities and top-tier service, we create a comfortable, safe, and enjoyable
+          environment for you.
         </p>
       </div>
 
