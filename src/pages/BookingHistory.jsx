@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { db, collection, getDocs } from "../firebase"; // Impor Firestore
 
 const BookingHistory = () => {
     const [bookings, setBookings] = useState([]); // Data booking dari server
@@ -8,17 +9,18 @@ const BookingHistory = () => {
     const [loading, setLoading] = useState(true); // Indikator loading
     const navigate = useNavigate();
 
-    // Fetch data dari json-server
+    // Fetch data dari Firestore
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const response = await fetch("http://localhost:3001/reservations");
-                if (!response.ok) {
-                    throw new Error("Failed to fetch reservations");
-                }
-                const data = await response.json();
-                setBookings(data);
-                setFilteredBookings(data); // Inisialisasi filter data
+                // Ambil koleksi reservations dari Firestore
+                const querySnapshot = await getDocs(collection(db, 'reservations'));
+                const bookingsData = [];
+                querySnapshot.forEach((doc) => {
+                    bookingsData.push({ id: doc.id, ...doc.data() }); // Menambahkan id dokumen dan data
+                });
+                setBookings(bookingsData);
+                setFilteredBookings(bookingsData); // Inisialisasi filter data
             } catch (error) {
                 console.error("Error fetching booking data:", error);
             } finally {

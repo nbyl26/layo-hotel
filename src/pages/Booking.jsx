@@ -1,6 +1,7 @@
 import { FaCalendarAlt, FaUsers, FaUser, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { db, collection, addDoc } from '../firebase'; // Tambahkan impor addDoc dan db dari firebase
 
 const Booking = () => {
     const location = useLocation();
@@ -41,24 +42,15 @@ const Booking = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:3001/reservations", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(reservationData),
-            });
+            // Kirim data pemesanan ke Firestore
+            const docRef = await addDoc(collection(db, "reservations"), reservationData);
 
-            const result = await response.json();
+            console.log("Reservation document written with ID: ", docRef.id);
 
-            if (response.ok) {
-                setMessage("Reservation successful!");
-                navigate("/confirmation", { state: { reservation: reservationData } });
-            } else {
-                setMessage(result.message || "Failed to make a reservation.");
-            }
+            setMessage("Reservation successful!");
+            navigate("/confirmation", { state: { reservation: reservationData } });
         } catch (error) {
-            console.error(error);
+            console.error("Error adding document: ", error);
             setMessage("An error occurred. Please try again.");
         } finally {
             setLoading(false);
