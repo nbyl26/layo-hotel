@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { db, collection, addDoc } from './firebase';
+import { db, collection, addDoc } from '../firebase';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faCalendarAlt, faUsers, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FaCalendarAlt, FaUsers } from "react-icons/fa";
 

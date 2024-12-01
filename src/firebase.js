@@ -1,19 +1,20 @@
-import firebase from "firebase/app";
-import "firebase/firestore"; 
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
+// Konfigurasi Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAe_W9Zo8RXLf3h2F12Q1o6CnmBsGxHM6g",
-  authDomain: "layo-hotel.firebaseapp.com",
-  projectId: "layo-hotel",
-  storageBucket: "layo-hotel.firebasestorage.app",
-  messagingSenderId: "608838426136",
-  appId: "1:608838426136:web:d2c208c79f9e84c88b2d6d",
+  apiKey: "AIzaSyCvspa_t_qbGKFP7Cd21pmOJ_KLa2YKsLY",
+  authDomain: "layo-hotel-153a5.firebaseapp.com",
+  projectId: "layo-hotel-153a5",
+  storageBucket: "layo-hotel-153a5.firebasestorage.app",
+  messagingSenderId: "1008501303275",
+  appId: "1:1008501303275:web:7ef87923f807475d675bae",
 };
 
 // Inisialisasi Firebase
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Mengakses Firestore
-const db = firebase.firestore();
+const db = getFirestore(app);
 
-export { db };
+export { db, addDoc, collection };
