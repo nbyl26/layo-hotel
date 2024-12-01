@@ -1,21 +1,16 @@
-/* Container Styling */
 .service-container {
   background-color: #f9f9f9;
-  margin: 0 auto;
-  padding: 50px 20px;
-  max-width: 1200px;
-  text-align: center;
+  margin-right: 11.8px;
 }
 
-/* Service Box Styling */
 .service-box {
-  background: #ffffff;
+  position: relative;
+  background: #fff;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  height: 100%;
-  position: relative;
+  text-align: center;
 }
 
 .service-box:hover {
@@ -23,19 +18,13 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Icon Styling */
 .service-icon {
   font-size: 3rem;
   color: #007bff;
   margin-bottom: 20px;
-  transition: color 0.3s ease;
+  z-index: 1; /* Menempatkan ikon di atas overlay */
 }
 
-.service-box:hover .service-icon {
-  color: #0056b3;
-}
-
-/* Title Styling */
 .service-title {
   font-size: 1.75rem;
   font-weight: 600;
@@ -48,31 +37,42 @@
   color: #0056b3;
 }
 
-/* Description Styling */
 .service-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #777;
-  line-height: 1.6;
   margin-bottom: 25px;
-  transition: color 0.3s ease;
 }
 
-/* Responsiveness */
+.service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  opacity: 0.8; /* Agar gambar sedikit transparan untuk memperjelas teks */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Efek transparan gelap */
+  border-radius: 15px;
+  z-index: 0; /* Menempatkan overlay di bawah teks dan ikon */
+}
+
+.service-box:hover .service-image {
+  opacity: 1; /* Mengembalikan gambar ke transparansi penuh saat hover */
+}
+
 @media (max-width: 768px) {
   .service-box {
-    padding: 30px;
+    padding: 20px;
   }
-
   .service-title {
     font-size: 1.5rem;
   }
-
   .service-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
-}
-
-/* Hover Effect for Service Box */
-.service-box:hover .service-description {
-  color: #0056b3;
 }
