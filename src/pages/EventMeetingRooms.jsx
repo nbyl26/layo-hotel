@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import RoomImage1 from "../../public/images/Meeting-Room.jpg";
-import RoomImage2 from "../../public/images/Conference-Hall.jpg";
-import RoomImage3 from "../../public/images/Wedding-Ballroom.jpg";
+import MeetingRoom from "../../public/images/Meeting-Room.jpg";
+import ConferenceHall from "../../public/images/Conference-Hall.jpg";
+import WeddingBallroom from "../../public/images/Wedding-Ballroom.jpg";
 
 const EventMeetingRooms = () => {
     const [fadeIn, setFadeIn] = useState(false);
@@ -27,9 +27,9 @@ const EventMeetingRooms = () => {
     };
 
     const rooms = [
-        { name: 'Meeting Room 1', capacity: 25, price: 'Rp 7.000.000/day', description: 'Ideal for small meetings', image: RoomImage1 },
-        { name: 'Conference Hall', capacity: 100, price: 'Rp 30.000.000/day', description: 'Perfect for conferences or large events', image: RoomImage2 },
-        { name: 'Wedding Ballroom', capacity: 300, price: 'Rp 100.000.000/day', description: 'Spacious ballroom for weddings and receptions', image: RoomImage3 }
+        { name: 'Meeting Room 1', capacity: 25, price: 'Rp 7.000.000/day', description: 'Ideal for small meetings', image: MeetingRoom },
+        { name: 'Conference Hall', capacity: 100, price: 'Rp 30.000.000/day', description: 'Perfect for conferences or large events', image: ConferenceHall },
+        { name: 'Wedding Ballroom', capacity: 300, price: 'Rp 100.000.000/day', description: 'Spacious ballroom for weddings and receptions', image: WeddingBallroom }
     ];
 
     return (
