@@ -1,66 +1,78 @@
+/* Container Styling */
 .service-container {
-    background-color: #f9f9f9;
-    margin-right: 11.8px;
-  }
-  
+  background-color: #f9f9f9;
+  margin: 0 auto;
+  padding: 50px 20px;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* Service Box Styling */
+.service-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  height: 100%;
+  position: relative;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+.service-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.service-box:hover .service-icon {
+  color: #0056b3;
+}
+
+/* Title Styling */
+.service-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.service-box:hover .service-title {
+  color: #0056b3;
+}
+
+/* Description Styling */
+.service-description {
+  font-size: 1.1rem;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
   .service-box {
-    background: #fff;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-    text-align: center;
-    position: relative;
-    height: 100%;
   }
-  
-  .service-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  .service-icon {
-    font-size: 3rem;
-    color: #007bff;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-  }
-  
-  .service-box:hover .service-icon {
-    color: #0056b3;
-  }
-  
+
   .service-title {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #007bff;
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
+    font-size: 1.5rem;
   }
-  
-  .service-box:hover .service-title {
-    color: #0056b3;
-  }
-  
+
   .service-description {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 25px;
+    font-size: 0.95rem;
   }
-  
-  
-  @media (max-width: 768px) {
-    .service-box {
-      padding: 20px;
-    }
-    .service-title {
-      font-size: 1.5rem;
-    }
-    .service-description {
-      font-size: 0.9rem;
-    }
-    .service-btn {
-      font-size: 1.1rem;
-    }
-  }
-  
+}
+
+/* Hover Effect for Service Box */
+.service-box:hover .service-description {
+  color: #0056b3;
+}
