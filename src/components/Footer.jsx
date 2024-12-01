@@ -21,7 +21,7 @@ const Footer = () => {
             padding: 0,
             display: "flex",
             justifyContent: "center",
-            flexWrap: "wrap", 
+            flexWrap: "wrap",
             marginBottom: "20px",
             gap: "30px",
           }}
@@ -30,9 +30,10 @@ const Footer = () => {
           {["Home", "Rooms", "Event & Meeting Rooms", "Booking History", "About", "Contact"].map((item, index) => {
             const link = item === "Home"
               ? "/"
-              : item === "Event & Meetings Room"
+              : item === "Event & Meeting Rooms" 
                 ? "/event-meeting-rooms"
-                : `/${item.toLowerCase().replace(" ", "-")}`;
+                : `/${item.toLowerCase().replace(/ & /g, "-").replace(" ", "-")}`;
+
             return (
               <li key={index}>
                 <Link
