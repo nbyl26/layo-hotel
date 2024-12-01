@@ -6,102 +6,99 @@ const Footer = () => {
   return (
     <footer
       style={{
-        backgroundColor: "#007bff",
+        background: "linear-gradient(90deg, #007bff, #0056b3)",
         color: "#ffffff",
         fontFamily: "'Poppins', sans-serif",
-        paddingTop: "40px",
+        padding: "30px 0",
+        textAlign: "center",
       }}
     >
-      <div className="container py-5">
-        {/* Footer Top Section */}
-        <div className="row">
-          {/* About Section */}
-          <div className="col-md-4 mb-4">
-            <h4 style={{ fontWeight: "700", marginBottom: "20px" }}>About Layo-Hotel</h4>
-            <p style={{ lineHeight: "1.8", fontSize: "0.95rem" }}>
-              Experience luxury and comfort at Layo-Hotel. With our premium facilities, prime locations, and excellent services, we ensure unforgettable stays and successful events for our guests.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div className="col-md-4 mb-4">
-            <h4 style={{ fontWeight: "700", marginBottom: "20px" }}>Quick Links</h4>
-            <ul style={{ listStyleType: "none", paddingLeft: 0, lineHeight: "2" }}>
-              {["Home", "Rooms", "Event & Meeting Rooms", "Booking History", "Contact Us"].map((item, index) => (
-                <li key={index}>
-                  <Link
-                    to={`/${item.toLowerCase().replace(" & ", "-").replace(" ", "-")}`}
-                    style={{
-                      color: "#ffffff",
-                      textDecoration: "none",
-                      transition: "color 0.3s ease-in-out",
-                    }}
-                    onMouseEnter={(e) => (e.target.style.color = "#a8d2ff")}
-                    onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Social Media */}
-          <div className="col-md-4 mb-4">
-            <h4 style={{ fontWeight: "700", marginBottom: "20px" }}>Contact Us</h4>
-            <p style={{ fontSize: "0.95rem", lineHeight: "2" }}>
-              <i className="bi bi-geo-alt-fill"></i> Indralaya, South Sumatra, Indonesia
-              <br />
-              <i className="bi bi-envelope-fill"></i> contact@layo-hotel.com
-              <br />
-              <i className="bi bi-telephone-fill"></i> +62 711 1234567
-            </p>
-            <div className="social-icons mt-3">
-              {["facebook", "instagram", "twitter", "linkedin"].map((social, index) => (
-                <a
-                  key={index}
-                  href={`https://${social}.com`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    color: "#ffffff",
-                    fontSize: "1.5rem",
-                    marginRight: "15px",
-                    transition: "transform 0.3s ease-in-out, color 0.3s ease-in-out",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.color = "#a8d2ff";
-                    e.target.style.transform = "scale(1.2)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.color = "#ffffff";
-                    e.target.style.transform = "scale(1)";
-                  }}
-                >
-                  <i className={`bi bi-${social}`}></i>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Decorative Divider */}
-        <div
+      <div className="container">
+        {/* Navigation Menu */}
+        <ul
           style={{
-            height: "5px",
-            width: "80px",
-            background: "linear-gradient(90deg, #ffffff, #a8d2ff)",
-            margin: "30px auto",
+            listStyleType: "none",
+            padding: 0,
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "20px",
+            gap: "30px",
           }}
-        ></div>
+        >
+          {["Home", "Rooms", "Booking History", "About", "Contact"].map((item, index) => (
+            <li key={index}>
+              <Link
+                to={`/${item.toLowerCase().replace(" ", "-")}`}
+                style={{
+                  color: "#ffffff",
+                  textDecoration: "none",
+                  fontWeight: "500",
+                  fontSize: "1rem",
+                  transition: "color 0.3s ease-in-out",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "#a8d2ff")}
+                onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-        {/* Footer Bottom Section */}
-        <div className="text-center mt-4">
-          <p style={{ fontSize: "0.9rem" }}>
-            &copy; {new Date().getFullYear()} Layo-Hotel. All Rights Reserved.
-          </p>
+        {/* Social Media Icons */}
+        <div style={{ marginBottom: "20px" }}>
+          {["facebook", "instagram", "twitter", "linkedin"].map((social, index) => (
+            <a
+              key={index}
+              href={`https://${social}.com`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "#ffffff",
+                fontSize: "1.5rem",
+                margin: "0 15px",
+                transition: "transform 0.3s ease-in-out, color 0.3s ease-in-out",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.color = "#a8d2ff";
+                e.target.style.transform = "scale(1.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = "#ffffff";
+                e.target.style.transform = "scale(1)";
+              }}
+            >
+              <i className={`bi bi-${social}`}></i>
+            </a>
+          ))}
         </div>
+
+        {/* Copyright Text */}
+        <p
+          style={{
+            fontSize: "0.9rem",
+            fontWeight: "400",
+            marginTop: "10px",
+          }}
+        >
+          &copy; 2024 Layo-Hotel. All Rights Reserved.
+        </p>
       </div>
+
+      {/* Glow Effect */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "150px",
+          height: "10px",
+          background: "radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 80%)",
+          filter: "blur(8px)",
+          zIndex: "-1",
+        }}
+      ></div>
     </footer>
   );
 };
