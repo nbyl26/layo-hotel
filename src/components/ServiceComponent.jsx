@@ -8,7 +8,7 @@ import Spa from "../assets/images/Spa.jpg";
 import SwimmingPool from "../assets/images/Swimming-Pool.jpg";
 import FitnessCenter from "../assets/images/Fitness-Center.jpg";
 import RoomService from "../assets/images/Room-Service.jpg";
-import ConferenceHall from "../assets/images/Conference-Hall.jpg";
+const ConferenceHall = "/images/Conference-Hall.jpg";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; 
