@@ -3,6 +3,10 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { db, collection, addDoc } from '../firebase'; // Tambahkan impor addDoc dan db dari firebase
 
+import MeetingRoom from "../../public/images/Meeting-Room.jpg";
+import ConferenceHall from "../../public/images/Conference-Hall.jpg";
+import WeddingBallroom from "../../public/images/Wedding-Ballroom.jpg";
+
 const Booking = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -34,8 +38,8 @@ const Booking = () => {
             roomTitle: formData.roomType,
             roomPrice: formData.roomType === "Meeting Room 1" ? "Rp 7.000.000/day" :
                 formData.roomType === "Conference Hall" ? "Rp 30.000.000/day" : "Rp 100.000.000/day",
-            roomImage: formData.roomType === "Meeting Room 1" ? "../../public/images/Meeting-Room.jpg" :
-                formData.roomType === "Conference Hall" ? "../../public/images/Conference-Hall.jpg" : "../../public/images/Wedding-Ballroom.jpg",
+            roomImage: formData.roomType === "Meeting Room 1" ? MeetingRoom :
+                formData.roomType === "Conference Hall" ? ConferenceHall : WeddingBallroom,
             checkInDate: formData.date,
             checkOutDate: formData.date,
             guests: formData.duration,

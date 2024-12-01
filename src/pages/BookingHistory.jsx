@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { db, collection, getDocs } from "../firebase"; // Impor Firestore
+import { db, collection, getDocs } from "../firebase"; 
 
 const BookingHistory = () => {
     const [bookings, setBookings] = useState([]); // Data booking dari server
@@ -9,11 +9,9 @@ const BookingHistory = () => {
     const [loading, setLoading] = useState(true); // Indikator loading
     const navigate = useNavigate();
 
-    // Fetch data dari Firestore
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                // Ambil koleksi reservations dari Firestore
                 const querySnapshot = await getDocs(collection(db, 'reservations'));
                 const bookingsData = [];
                 querySnapshot.forEach((doc) => {
