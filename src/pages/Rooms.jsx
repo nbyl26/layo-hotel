@@ -4,32 +4,61 @@ import { Link } from "react-router-dom";
 import DeluxeRoom from "../assets/images/Deluxe-Room.jpg";
 import SuiteRoom from "../assets/images/Suite-Room.jpg";
 import FamilyRoom from "../assets/images/Family-Room.jpg";
+import PresidentialSuite from "../assets/images/Presidential-Suite.jpg";
+import SingleRoom from "../assets/images/Single-Room.jpg";
+import TwinRoom from "../assets/images/Twin-Room.jpg";
+
+const rooms = [
+  {
+    title: "Deluxe Room",
+    image: DeluxeRoom,
+    price: "Rp 1.500.000/night",
+    description: "A luxurious room with a king-sized bed and modern amenities.",
+    features: ["King-size bed", "Ocean view", "Free WiFi", "Breakfast included"],
+  },
+  {
+    title: "Suite Room",
+    image: SuiteRoom,
+    price: "Rp 2.500.000/night",
+    description: "A spacious suite with separate living area and a balcony.",
+    features: ["Separate living area", "Balcony", "Free WiFi", "Mini bar"],
+  },
+  {
+    title: "Family Room",
+    image: FamilyRoom,
+    price: "Rp 2.000.000/night",
+    description: "Perfect for families with two double beds and extra space.",
+    features: ["Two double beds", "Extra space", "Free WiFi", "Family-friendly"],
+  },
+  {
+    title: "Presidential Suite",
+    image: PresidentialSuite,
+    price: "Rp 5.000.000/night",
+    description: "Experience the ultimate luxury with panoramic views and exclusive services.",
+    features: [
+      "Panoramic city view",
+      "Private lounge access",
+      "24-hour butler service",
+      "Jacuzzi",
+    ],
+  },
+  {
+    title: "Twin Room",
+    image: TwinRoom,
+    price: "Rp 1.200.000/night",
+    description: "A modern room with two single beds, perfect for friends or siblings.",
+    features: ["Two single beds", "Free WiFi", "Flat-screen TV", "Room service"],
+  },
+  {
+    title: "Single Room",
+    image: SingleRoom,
+    price: "Rp 750.000/night",
+    description: "Cozy and comfortable room, ideal for solo travelers.",
+    features: ["Single bed", "Free WiFi", "Work desk", "Complimentary tea/coffee"],
+  },
+];
 
 const Rooms = () => {
-  const rooms = [
-    {
-      title: "Deluxe Room",
-      image: DeluxeRoom,
-      price: "Rp 1.500.000/night",
-      description: "A luxurious room with a king-sized bed and modern amenities.",
-      features: ["King-size bed", "Ocean view", "Free WiFi", "Breakfast included"],
-    },
-    {
-      title: "Suite Room",
-      image: SuiteRoom,
-      price: "Rp 2.500.000/night",
-      description: "A spacious suite with separate living area and a balcony.",
-      features: ["Separate living area", "Balcony", "Free WiFi", "Mini bar"],
-    },
-    {
-      title: "Family Room",
-      image: FamilyRoom,
-      price: "Rp 2.000.000/night",
-      description: "Perfect for families with two double beds and extra space.",
-      features: ["Two double beds", "Extra space", "Free WiFi", "Family-friendly"],
-    },
-  ];
-
   return (
     <div className="container my-5">
       <h2 className="text-center mb-4" style={{ color: "#007bff", fontWeight: "700" }}>
@@ -46,7 +75,10 @@ const Rooms = () => {
                 transition: "transform 0.3s ease",
               }}
             >
-              <div className="card-img-container" style={{ position: "relative", height: "250px" }}>
+              <div
+                className="card-img-container"
+                style={{ position: "relative", height: "250px" }}
+              >
                 <img
                   src={room.image}
                   className="card-img-top"
@@ -72,7 +104,10 @@ const Rooms = () => {
                   }}
                 ></div>
               </div>
-              <div className="card-body text-center" style={{ padding: "20px", backgroundColor: "#f8f9fa" }}>
+              <div
+                className="card-body text-center"
+                style={{ padding: "20px", backgroundColor: "#f8f9fa" }}
+              >
                 <h5 className="card-title" style={{ color: "#007bff" }}>
                   {room.title}
                 </h5>
