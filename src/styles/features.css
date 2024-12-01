@@ -1,38 +1,71 @@
-.container-features{
+/* Container styling */
+.container-features {
   background-color: #f9f9f9;
-  margin-right: 11.7px;
+  padding: 50px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
 }
+
+/* Animation for features */
 .feature-animate {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  
-  .feature-animate:hover .bi {
-    transform: scale(1.1);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.feature-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling */
+.features-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.card-body:hover .features-icon {
+  color: #0056b3;
+}
+
+/* Title styling */
+.features-title {
+  color: #007bff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-body:hover .features-title {
+  color: #0056b3;
+}
+
+/* Description styling */
+.features-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .features-icon {
+    font-size: 2.5rem;
   }
 
-  .features-icon {
-    font-size: 3rem;
-    color: #007bff;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-  }
-  
-  .card-body:hover .features-icon {
-    color: #0056b3;
-  }
-  
   .features-title {
-    color: #007bff;
-  }
-  
-  .card-body:hover .features-title {
-    color: #0056b3;
+    font-size: 1.1rem;
   }
 
   .features-description {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 25px;
+    font-size: 0.9rem;
   }
+}
