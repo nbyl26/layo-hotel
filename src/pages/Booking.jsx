@@ -34,8 +34,8 @@ const Booking = () => {
             roomTitle: formData.roomType,
             roomPrice: formData.roomType === "Meeting Room 1" ? "Rp 7.000.000/day" :
                 formData.roomType === "Conference Hall" ? "Rp 30.000.000/day" : "Rp 100.000.000/day",
-            roomImage: formData.roomType === "Meeting Room 1" ? "/src/assets/images/Meeting-Room.jpg" :
-                formData.roomType === "Conference Hall" ? "/src/assets/images/Conference-Hall.jpg" : "/src/assets/images/Wedding-Ballroom.jpg",
+            roomImage: formData.roomType === "Meeting Room 1" ? "../../public/images/Meeting-Room.jpg" :
+                formData.roomType === "Conference Hall" ? "../../public/images/Conference-Hall.jpg" : "../../public/images/Wedding-Ballroom.jpg",
             checkInDate: formData.date,
             checkOutDate: formData.date,
             guests: formData.duration,
