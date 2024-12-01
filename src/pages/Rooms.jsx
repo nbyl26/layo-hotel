@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import DeluxeRoom from "../assets/images/Deluxe-Room.jpg";
-import SuiteRoom from "../assets/images/Suite-Room.jpg";
-import FamilyRoom from "../assets/images/Family-Room.jpg";
-import PresidentialSuite from "../assets/images/Presidential-Suite.jpg";
-import SingleRoom from "../assets/images/Single-Room.jpg";
-import TwinRoom from "../assets/images/Twin-Room.jpg";
+import DeluxeRoom from "../../public/images/Deluxe-Room.jpg";
+import SuiteRoom from "../../public/images/Suite-Room.jpg";
+import FamilyRoom from "../../public/images/Family-Room.jpg";
+import PresidentialSuite from "../../public/images/Presidential-Suite.jpg";
+import SingleRoom from "../../public/images/Single-Room.jpg";
+import TwinRoom from "../../public/images/Twin-Room.jpg";
 
 const rooms = [
   {

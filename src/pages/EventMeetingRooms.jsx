@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import RoomImage1 from "../assets/images/Meeting-Room.jpg";
-import RoomImage2 from "../assets/images/Conference-Hall.jpg";
-import RoomImage3 from "../assets/images/Wedding-Ballroom.jpg";
+
+import RoomImage1 from "../../public/images/Meeting-Room.jpg";
+import RoomImage2 from "../../public/images/Conference-Hall.jpg";
+import RoomImage3 from "../../public/images/Wedding-Ballroom.jpg";
 
 const EventMeetingRooms = () => {
     const [fadeIn, setFadeIn] = useState(false);
