@@ -25,32 +25,43 @@ const Footer = () => {
             gap: "30px",
           }}
         >
-          {["Home", "Rooms", "Booking History", "About", "Contact"].map((item, index) => (
-            <li key={index}>
-              <Link
-                to={`/${item.toLowerCase().replace(" ", "-")}`}
-                style={{
-                  color: "#ffffff",
-                  textDecoration: "none",
-                  fontWeight: "500",
-                  fontSize: "1rem",
-                  transition: "color 0.3s ease-in-out",
-                }}
-                onMouseEnter={(e) => (e.target.style.color = "#a8d2ff")}
-                onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
-              >
-                {item}
-              </Link>
-            </li>
-          ))}
+          {["Home", "Rooms", "Event & Meeting Rooms", "Booking History", "About", "Contact"].map((item, index) => {
+            const link = item === "Home" 
+              ? "/" 
+              : item === "Event & Meetings Room" 
+              ? "/event-meeting-rooms" 
+              : `/${item.toLowerCase().replace(" ", "-")}`;
+            return (
+              <li key={index}>
+                <Link
+                  to={link}
+                  style={{
+                    color: "#ffffff",
+                    textDecoration: "none",
+                    fontWeight: "500",
+                    fontSize: "1rem",
+                    transition: "color 0.3s ease-in-out",
+                  }}
+                  onMouseEnter={(e) => (e.target.style.color = "#a8d2ff")}
+                  onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
+                >
+                  {item}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Social Media Icons */}
         <div style={{ marginBottom: "20px" }}>
-          {["facebook", "instagram", "twitter", "linkedin"].map((social, index) => (
+          {[
+            { name: "github", link: "https://github.com/nbyl26" },
+            { name: "instagram", link: "https://instagram.com/nbyl.26" },
+            { name: "linkedin", link: "https://linkedin.com/in/nabilpasha" },
+          ].map((social, index) => (
             <a
               key={index}
-              href={`https://${social}.com`}
+              href={social.link}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -68,7 +79,7 @@ const Footer = () => {
                 e.target.style.transform = "scale(1)";
               }}
             >
-              <i className={`bi bi-${social}`}></i>
+              <i className={`bi bi-${social.name}`}></i>
             </a>
           ))}
         </div>
@@ -81,7 +92,7 @@ const Footer = () => {
             marginTop: "10px",
           }}
         >
-          &copy; 2024 Layo-Hotel. All Rights Reserved.
+          Nabil Pasha | &copy; 2024 Layo-Hotel. All Rights Reserved.
         </p>
       </div>
 
