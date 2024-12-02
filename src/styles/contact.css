@@ -1,59 +1,67 @@
 @media (max-width: 992px) {
     .d-flex {
-      flex-direction: column; /* Stack items vertically */
-      align-items: center;
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
     }
-  
-    .map-container, .form-container {
-      margin: 0 0 20px 0; /* Reset margin for stacked layout */
-      height: auto; /* Adjust height to content */
-      width: 100%; /* Full width */
+
+    .map-container,
+    .form-container {
+        margin: 0 0 20px 0;
+        /* Reset margin for stacked layout */
+        height: auto;
+        /* Adjust height to content */
+        width: 100%;
+        /* Full width */
     }
-  
+
     .map-container iframe {
-      height: 300px; /* Fixed height for small screens */
+        height: 300px;
+        /* Fixed height for small screens */
     }
-  
+
     .btn {
-      width: 100%; /* Full-width button for smaller screens */
+        width: 100%;
     }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     h2 {
-      font-size: 2rem; /* Smaller font for smaller devices */
+        font-size: 2rem;
     }
-  
+
     .form-label {
-      font-size: 1rem; /* Adjust label size */
+        font-size: 1rem;
+        justify-content: flex-start;
+        text-align: left;
     }
-  
-    input, textarea {
-      font-size: 1rem; /* Adjust input and textarea size */
-      padding: 10px; /* Reduce padding for compact view */
+
+    input,
+    textarea {
+        font-size: 1rem;
+        padding: 10px;
     }
-  
+
     .btn {
-      font-size: 1rem; /* Adjust button font size */
-      padding: 10px; /* Adjust padding */
+        font-size: 1rem;
+        padding: 10px;
     }
-  }
-  
-  @media (max-width: 576px) {
+}
+
+@media (max-width: 576px) {
     .container {
-      padding: 30px 10px; /* Compact padding for small devices */
+        padding: 30px 10px;
     }
-  
+
     h2 {
-      font-size: 1.75rem; /* Further reduce title size */
+        font-size: 1.75rem;
     }
-  
+
     .map-container iframe {
-      height: 250px; /* Adjust map height */
+        height: 250px;
     }
-  
+
     .btn {
-      padding: 8px 20px; /* Compact button */
+        padding: 8px 20px;
     }
-  }
-  
+}
