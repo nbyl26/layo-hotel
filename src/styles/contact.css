@@ -1,0 +1,59 @@
+@media (max-width: 992px) {
+    .d-flex {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+    }
+  
+    .map-container, .form-container {
+      margin: 0 0 20px 0; /* Reset margin for stacked layout */
+      height: auto; /* Adjust height to content */
+      width: 100%; /* Full width */
+    }
+  
+    .map-container iframe {
+      height: 300px; /* Fixed height for small screens */
+    }
+  
+    .btn {
+      width: 100%; /* Full-width button for smaller screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem; /* Smaller font for smaller devices */
+    }
+  
+    .form-label {
+      font-size: 1rem; /* Adjust label size */
+    }
+  
+    input, textarea {
+      font-size: 1rem; /* Adjust input and textarea size */
+      padding: 10px; /* Reduce padding for compact view */
+    }
+  
+    .btn {
+      font-size: 1rem; /* Adjust button font size */
+      padding: 10px; /* Adjust padding */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .container {
+      padding: 30px 10px; /* Compact padding for small devices */
+    }
+  
+    h2 {
+      font-size: 1.75rem; /* Further reduce title size */
+    }
+  
+    .map-container iframe {
+      height: 250px; /* Adjust map height */
+    }
+  
+    .btn {
+      padding: 8px 20px; /* Compact button */
+    }
+  }
+  

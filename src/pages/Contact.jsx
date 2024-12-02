@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import "../styles/contact.css";
 
 const Contact = () => {
   const [fadeIn, setFadeIn] = useState(false);
